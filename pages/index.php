@@ -102,7 +102,7 @@ $lvl = $lf->getLevel($exp);
 
             <ul class="nav navbar-top-links navbar-right">
 
-            s
+            
             </ul>
             <!-- /.navbar-top-links -->
 
