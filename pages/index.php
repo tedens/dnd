@@ -29,8 +29,6 @@ if ($user['statRolls'] !== '5'){
     $allowRolls = false;
 }
 
-var_dump($_POST);
-
 if (isset($_POST['action'])) {
     switch ($_POST['action']) {
         case 'reroll':
@@ -79,6 +77,7 @@ $lvl = $lf->getLevel($exp);
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
     <![endif]-->
 
 </head>
@@ -123,6 +122,8 @@ $lvl = $lf->getLevel($exp);
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header"><?php echo $fullName; ?></h1>
+
+                    <?php if($fullName == ' '){ echo '<button type="button" id="setNameButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setName" class="btn-success">Set Name</button>';} ?>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -131,7 +132,7 @@ $lvl = $lf->getLevel($exp);
                     <h4>
                         Character Info
                     </h4>
-                    <button data-uname="<?php echo $uname; ?>" id="reroll" class="btn-success button left">ReRoll (<?php echo 5 - $user['statRolls']?> left)</button>
+                    <?php if (5 - $user['statRolls'] !== 0){ echo '<button data-uname="'.$uname.'" id="reroll" class="btn-success button left">ReRoll ('.(5 - $user['statRolls']).' left)</button>'; }?>
 
                     <div class="col-lg-5 fa-border left">
                         <?php
@@ -145,6 +146,7 @@ $lvl = $lf->getLevel($exp);
                         echo "<ul>Level: $lvl</ul>";
                         echo "<ul>Gold: $gold</ul>";
                         echo "<ul>Alignment: $align</ul>";
+                        if($align == ''){ echo '<button type="button" id="setAlignButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setAlign" class="btn-primary">Set Alignment</button>';}
                         ?>
                     </div>
                 </div>
@@ -152,12 +154,39 @@ $lvl = $lf->getLevel($exp);
                     <h4>
                         Inventory
                     </h4>
-                    <div class="col-lg-6 fa-border right">
+                    <div class="col-lg-10 fa-border right">
                         <?php
                         foreach($user['inv'] as $key => $item) {
                             echo "<ul>$key: $item</ul>";
                         }
                         ?>
+                        <hr>
+                        <table cellpadding="10" style="width: 100%;">
+                            <tr>
+                                <th>
+                                    Type
+                                </th>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Stat Modifier
+                                </th>
+                                <th>
+
+                                </th>
+                            </tr>
+                                <?php
+                                foreach($user['bag'] as $item) {
+                                    echo "<tr>";
+                                    echo "<td>".$item['type']."</td>";
+                                    echo "<td>".$item['name']."</td>";
+                                    echo "<td>".$item['stats']."</td>";
+                                    echo "<td><button id=\"itemEquip\" class=\"btn btn-success\" data-uname='".$uname."' value='".$item['name']."'>Equip</button></td>";
+                                    echo "</tr>";
+                                }
+                                ?>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -185,19 +214,45 @@ $lvl = $lf->getLevel($exp);
     <script src="../dist/js/sb-admin-2.js"></script>
 
     <script>
-        $(document).ready(function(){
-            $('#reroll').click(function(){
-                var uname = $(this).data('uname');
-                var ajaxurl = '../php/reroll.php',
-                    data =  {'uname': uname};
-                $.post(ajaxurl, data, function (response) {
-                    // Response div goes here.
-                    alert("Your stats have been rerolled, please refresh");
+        $(document).ready(function() {
+            //rerolling user stats
+            $('#reroll').click(function () {
+                var uname = $(this).data('uname'),
+                    ajaxUrl = '/dnd/php/reroll.php?user=' + uname;
+                $.post(ajaxUrl, function () {
+                    location.reload();
                 });
+            });
+            $('#itemEquip').click(function(){
+                var uname = $(this).data('uname'),
+                    item = $(this).val(),
+                    ajaxUrl = '/dnd/php/equipItem.php?user=' + uname + '&item=' + item;
+                $.post(ajaxUrl, function(){
+                   location.reload();
+                });
+            });
+            // Setting name function
+            $('#saveName').click(function () {
+                var uname = $(this).data('uname'),
+                    fname = $("#firstName").val(),
+                    lname = $("#lastName").val(),
+                    ajaxUrl = '/dnd/php/setName.php?user=' + uname + '&fname=' + fname + '&lname=' + lname;
+                $.post(ajaxUrl, function () {
+                    location.reload();
+                });
+            });
+            $('#saveAlign').click(function(){
+               var uname = $(this).data('uname'),
+                   align = $('#alignSelect').find(":selected").text(),
+                   ajaxUrl = '/dnd/php/setAlign.php?user=' + uname + '&align='+ $.trim(align);
+               $.post(ajaxUrl, function () {
+                   location.reload();
+               });
             });
 
         });
     </script>
+<?php include 'playerModals.html'; ?>
 </body>
 
 </html>

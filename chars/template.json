@@ -9,12 +9,12 @@
   "align": "",
   "statRolls": "0",
   "stats": {
-    "Strength": "",
-    "Dexterity": "",
-    "Constitution": "",
-    "Intelligence": "",
-    "Wisdom": "",
-    "Charisma": ""
+    "Strength": "1",
+    "Dexterity": "1",
+    "Constitution": "1",
+    "Intelligence": "1",
+    "Wisdom": "1",
+    "Charisma": "1"
   },
   "gold": "0",
   "exp": "0",
@@ -66,6 +66,9 @@
     }
   ],
   "notes": {
+
+  },
+  "bag": {
 
   }
 

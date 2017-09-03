@@ -1,0 +1,92 @@
+<!-- Modal -->
+<div id="setName" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Set Character Name</h4>
+            </div>
+            <div class="modal-body">
+                <p>Be sure your name is spelled correctly as you can only change it once per character.</p>
+            </div>
+            <form style="margin: 5px 20px;">
+                <label>
+                    First Name:
+                </label>
+                <input id="firstName" type="text" name="firstName" />
+                <br>
+                <label>
+                    Last Name:
+                </label>
+                <input id="lastName" type="text" name="lastName" />
+                <br>
+                <button id="saveName" type="button" class="btn btn-info" data-uname="<?php echo $uname; ?>">Save</button>
+            </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="setAlign" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Set Character Alignment</h4>
+            </div>
+            <div class="modal-body">
+                <p>This can only be changed once.</p>
+            </div>
+            <form style="margin: 5px 20px;">
+                <label>
+                    Alignment:
+                </label>
+
+                <select id="alignSelect">
+                    <option>
+                        Lawful Good
+                    </option>
+                    <option>
+                        Neutral Good
+                    </option>
+                    <option>
+                        Chaotic Good
+                    </option>
+                    <option>
+                        Lawful Neutral
+                    </option>
+                    <option>
+                        Neutral
+                    </option>
+                    <option>
+                        Chaotic Neutral
+                    </option>
+                    <option>
+                        Lawful Evil
+                    </option>
+                    <option>
+                        Neutral Evil
+                    </option>
+                    <option>
+                        Chaotic Evil
+                    </option>
+
+                </select>
+
+                <br>
+                <button id="saveAlign" type="button" class="btn btn-info" data-uname="<?php echo $uname; ?>">Save</button>
+            </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
