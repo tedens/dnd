@@ -3,8 +3,19 @@ $(document).ready(function() {
         var gold = $("#goldAmount").val();
         $('#goldList :selected').each(function() {
             var ajaxUrl = '/dnd/php/actions.php?action=gold&gold=' + gold + '&user=' + $(this).text();
-            $.post(ajaxUrl, function(e){
-                console.log(e);
+            $.post(ajaxUrl, function(){
+                location.reload();
+            })
+        });
+
+    });
+
+    $('#saveExp').click(function () {
+        var exp = $("#exp").val();
+        $('#players :selected').each(function() {
+            var ajaxUrl = '/dnd/php/actions.php?action=setExp&exp=' + exp + '&user=' + $(this).text();
+            $.post(ajaxUrl, function(){
+                location.reload();
             })
         });
 
@@ -15,10 +26,13 @@ $(document).ready(function() {
             itemType = $("#itemType").val(),
             stats = $("#statMod").val(),
             cost = $("#cost").val(),
-            stat = $("#stat").find(":selected").text();
-            ajaxUrl = '/dnd/php/actions.php?action=addItem&itemType='+ itemType +'&itemName=' + itemName + '&statMod=' + stats + '&stat'+ stat +'&cost=' + cost + '&user=' + $('#players').find(':selected').text();
-        $.post(ajaxUrl, function(){
-            location.reload();
+            desc = $("#desc").val(),
+            stat = $("#stat").val(),
+            user = $("#playerList").find(":selected").text(),
+            mod = $("#mod").find(":selected").val(),
+            ajaxUrl = '/dnd/php/actions.php?action=addItem&itemType='+ itemType +'&itemName=' + itemName + '&statMod=' + mod + ' ' + stats + '&stat='+ stat + '&desc=' + desc + '&cost=' + cost + '&user=' + user;
+        $.post(ajaxUrl, function(e){
+            console.log(e);
         })
 
     });

@@ -27,7 +27,8 @@ switch ($_REQUEST['action']){
         break;
 
     case "addItem":
-        $user['bag'][] = array("type" => $_REQUEST['itemType'], "name" => $_REQUEST['itemName'], "stats" => $_REQUEST['statMod'], "cost" => $_REQUEST['cost']);
+        $user['bag'][] = array("type" => $_REQUEST['itemType'], "name" => $_REQUEST['itemName'], "stats" => $_REQUEST['statMod'], "stat" => $_REQUEST['stat'], "desc" => $_REQUEST['desc'], "cost" => $_REQUEST['cost']);
+        print_r($_REQUEST['statMod']);
         break;
 
     case "sellItem":
@@ -74,6 +75,30 @@ switch ($_REQUEST['action']){
 
     case "setAlign":
         $user['align'] = $_REQUEST['align'];
+        break;
+
+    case "setAge":
+        $user['age'] = $_REQUEST['age'];
+        break;
+
+    case "setGender":
+        $user['sex'] = $_REQUEST['gender'];
+        break;
+
+    case "setRace":
+        $user['race'] = $_REQUEST['race'];
+        break;
+
+    case "setClass":
+        $user['class'] = $_REQUEST['class'];
+        break;
+
+    case "setExp":
+        $user['exp'] = $user['exp'] + $_REQUEST['exp'];
+        break;
+
+    case "satisfy":
+        $user['statRolls'] = 5;
         break;
 }
 

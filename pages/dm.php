@@ -108,8 +108,9 @@ foreach ($users as $user){
                         echo "<ul>".substr($u, 0, -5)." --- Character Name: ".$jsonUser->firstname." ".$jsonUser->lastname." </ul>";
                     }
                     ?>
-                    <button id="giveGoldButton" data-toggle="modal" data-target="#giveGold" class="btn btn-warning">Manage Gold</button>
-                    <button id="giveItemButton" data-toggle="modal" data-target="#manageInv" class="btn btn-primary">Manage Player Inventory</button>
+                    <button id="giveGoldButton" data-toggle="modal" data-target="#giveGold" class="btn btn-warning">Manage Gold</button><br><br>
+                    <button id="giveExpButton" data-toggle="modal" data-target="#giveExp" class="btn btn-basic">Give Exp</button><br><br>
+                    <button id="giveItemButton" data-toggle="modal" data-target="#manageInv" class="btn btn-primary">Give Player Items</button>
 
                 </div>
             </div>
