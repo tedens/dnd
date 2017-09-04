@@ -54,9 +54,11 @@ switch ($_REQUEST['action']){
         foreach ($user['bag'] as $value){
             if($value['name'] == $item){
                 $type = $value['type'];
+                $stat['int'] = $value['stat']
             }
         }
         $user['inv'][$type] = $item;
+
         break;
 
     case "reroll":
