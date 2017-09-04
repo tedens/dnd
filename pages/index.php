@@ -18,6 +18,11 @@ $exp = $user['exp'];
 $gold = $user['gold'];
 $align = $user['align'];
 $fullName = $user['firstname'].' '.$user['lastname'];
+$age = $user['age'];
+$race = $user['race'];
+$class = $user['class'];
+$gender = $user['sex'];
+
 
 
 //get ability modify info
@@ -123,19 +128,22 @@ $lvl = $lf->getLevel($exp);
                 <div class="col-lg-12">
                     <h1 class="page-header"><?php echo $fullName; ?></h1>
 
-                    <?php if($fullName == ' '){ echo '<button type="button" id="setNameButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setName" class="btn-success">Set Name</button>';} ?>
+
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <div class="row">
-                <div class="col-lg-6">
-                    <h4>
-                        Character Info
-                    </h4>
-                    <?php if (5 - $user['statRolls'] !== 0){ echo '<button data-uname="'.$uname.'" id="reroll" class="btn-success button left">ReRoll ('.(5 - $user['statRolls']).' left)</button>'; }?>
-
-                    <div class="col-lg-5 fa-border left">
+                <div class="col-lg-3">
+                    <div class="col-lg-12 fa-border left">
+                        <h4>
+                            Character Info
+                        </h4>
                         <?php
+                        echo "<ul>Race: $race</ul>";
+                        echo "<ul>Class: $class</ul>";
+                        echo "<ul>Gender: $gender</ul>";
+                        echo "<ul>Age: $age</ul>";
+                        echo "<hr>";
                         foreach ($user['stats'] as $key => $st){
                             echo "<ul>$key: $st -- Mod: ".$am->getAbilityModifer($st)."</ul>";
                         }
@@ -144,22 +152,29 @@ $lvl = $lf->getLevel($exp);
                         <?php
                         echo "<ul>Exp: $exp</ul>";
                         echo "<ul>Level: $lvl</ul>";
-                        echo "<ul>Gold: $gold</ul>";
+                        echo "<ul>Gold: ".$gold."g</ul>";
                         echo "<ul>Alignment: $align</ul>";
-                        if($align == ''){ echo '<button type="button" id="setAlignButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setAlign" class="btn-primary">Set Alignment</button>';}
                         ?>
                     </div>
                 </div>
                 <div class="col-lg-6 right">
-                    <h4>
-                        Inventory
-                    </h4>
-                    <div class="col-lg-10 fa-border right">
-                        <?php
-                        foreach($user['inv'] as $key => $item) {
-                            echo "<ul>$key: $item</ul>";
-                        }
-                        ?>
+                    <div class="col-lg-12 fa-border right">
+                        <h4>
+                            Inventory
+                        </h4>
+                        <table cellpadding="10" style="width: 100%;">
+                            <?php
+                            foreach($user['inv'] as $key => $item) {
+                                echo "<tr>";
+                                echo "<td>$key: </td>";
+                                echo "<td>$item</td>";
+                                if ($item) {
+                                    echo "<td><button class='btn btn-danger itemUnEquip' data-uname='".$uname."' value='".$item."'>Un-Equip</button></td>";
+                                }
+                                echo "</tr>";
+                            }
+                            ?>
+                        </table>
                         <hr>
                         <table cellpadding="10" style="width: 100%;">
                             <tr>
@@ -173,7 +188,7 @@ $lvl = $lf->getLevel($exp);
                                     Stat Modifier
                                 </th>
                                 <th>
-
+                                    Worth
                                 </th>
                             </tr>
                                 <?php
@@ -182,11 +197,26 @@ $lvl = $lf->getLevel($exp);
                                     echo "<td>".$item['type']."</td>";
                                     echo "<td>".$item['name']."</td>";
                                     echo "<td>".$item['stats']."</td>";
-                                    echo "<td><button id=\"itemEquip\" class=\"btn btn-success\" data-uname='".$uname."' value='".$item['name']."'>Equip</button></td>";
+                                    echo "<td>".$item['cost']."g</td>";
+                                    echo "<td><button class='btn btn-primary itemEquip' data-uname='".$uname."' value='".$item['name']."'>Equip</button></td>";
+                                    echo "<td><button class='btn btn-success sellItem' data-uname='".$uname."' value='".$item['name']."'>Sell</button></td>";
                                     echo "</tr>";
                                 }
                                 ?>
                         </table>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="col-lg-12 fa-border">
+                        <h4>TODO</h4>
+                        <?php if (5 - $user['statRolls'] !== 0){ echo '<button data-uname="'.$uname.'" id="reroll" class="btn-success button left">ReRoll ('.(5 - $user['statRolls']).' left)</button><br><br>'; }
+                        if($align == ''){ echo '<button type="button" id="setAlignButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setAlign" class="btn-primary">Set Alignment</button><br><br>';}
+                         if($fullName == ' '){ echo '<button type="button" id="setNameButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setName" class="btn-primary">Set Name</button><br><br>';}
+                        if($age == ''){ echo '<button type="button" id="setNameButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setName" class="btn-primary">Set Age</button><br><br>';}
+                        if($race == ''){ echo '<button type="button" id="setNameButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setName" class="btn-primary">Set Race</button><br><br>';}
+                        if($class == ''){ echo '<button type="button" id="setNameButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setName" class="btn-primary">Set Class</button><br><br>';}
+                        if($gender == ''){ echo '<button type="button" id="setNameButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setName" class="btn-primary">Set Gender</button><br><br>';}
+                        ?>
                     </div>
                 </div>
             </div>
@@ -213,45 +243,7 @@ $lvl = $lf->getLevel($exp);
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
 
-    <script>
-        $(document).ready(function() {
-            //rerolling user stats
-            $('#reroll').click(function () {
-                var uname = $(this).data('uname'),
-                    ajaxUrl = '/dnd/php/reroll.php?user=' + uname;
-                $.post(ajaxUrl, function () {
-                    location.reload();
-                });
-            });
-            $('#itemEquip').click(function(){
-                var uname = $(this).data('uname'),
-                    item = $(this).val(),
-                    ajaxUrl = '/dnd/php/equipItem.php?user=' + uname + '&item=' + item;
-                $.post(ajaxUrl, function(){
-                   location.reload();
-                });
-            });
-            // Setting name function
-            $('#saveName').click(function () {
-                var uname = $(this).data('uname'),
-                    fname = $("#firstName").val(),
-                    lname = $("#lastName").val(),
-                    ajaxUrl = '/dnd/php/setName.php?user=' + uname + '&fname=' + fname + '&lname=' + lname;
-                $.post(ajaxUrl, function () {
-                    location.reload();
-                });
-            });
-            $('#saveAlign').click(function(){
-               var uname = $(this).data('uname'),
-                   align = $('#alignSelect').find(":selected").text(),
-                   ajaxUrl = '/dnd/php/setAlign.php?user=' + uname + '&align='+ $.trim(align);
-               $.post(ajaxUrl, function () {
-                   location.reload();
-               });
-            });
-
-        });
-    </script>
+    <script src="../js/playerActions.js"></script>
 <?php include 'playerModals.html'; ?>
 </body>
 

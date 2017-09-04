@@ -137,33 +137,7 @@ foreach ($users as $user){
 <!-- Custom Theme JavaScript -->
 <script src="../dist/js/sb-admin-2.js"></script>
 
-<script>
-    $(document).ready(function() {
-        //rerolling user stats
-        $('#saveGold').click(function () {
-            var gold = $("#goldAmount").val();
-            $('#goldList :selected').each(function() {
-                var ajaxUrl = '/dnd/php/addGold.php?gold=' + gold + '&user=' + $(this).text();
-                $.post(ajaxUrl, function(){
-                    location.reload();
-                })
-            });
-
-        });
-
-        $('#saveItem').click(function () {
-            var itemName = $("#itemName").val(),
-                itemType = $("#itemType").val(),
-                stats = $("#statMod").val(),
-                ajaxUrl = '/dnd/php/addItem.php?itemType='+ itemType +'&itemName=' + itemName + '&statMod=' + stats + '&user=' + $('#players').find(':selected').text();
-            $.post(ajaxUrl, function(){
-                location.reload();
-            })
-
-        });
-
-    });
-</script>
+<script src="../js/dmActions.js"></script>
 <?php include 'dmModals.php'; ?>
 </body>
 

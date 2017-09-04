@@ -63,9 +63,28 @@
                 </label>
                 <input id="itemName" name="itemName"><br/><br />
                 <label>
-                    Stat Modifier (+2 Wis):
+                    Stat Modifier (+2):
                 </label>
-                <input id="statMod" name="statMod"><br/> <br />
+                <input id="statMod" name="statMod">
+                <select id="stat">
+                    <?php
+                    foreach($template->stats as $key => $value){
+                        echo "<option value='$key'>$key</option>";
+                    }
+
+                    ?>
+                    <option value="other">Other</option>
+
+                </select>
+                <br/> <br />
+                <label>
+                    Worth in Gold?:
+                </label>
+                <input id="cost" name="cost"><br /><br />
+                <label>
+                    Item Description:
+                </label>
+                <input id="desc" name="desc"><br><br>
                 <label>
                     Player Name:
                 </label>
