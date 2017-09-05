@@ -10,6 +10,9 @@ $user = json_decode(file_get_contents("../chars/".$_REQUEST['user'].".json"), tr
 if (isset($_REQUEST['item'])){
     $item = $_REQUEST['item'];
 }
+if (isset($_REQUEST['type'])){
+  $type = $_REQUEST['type'];
+}
 
 switch ($_REQUEST['action']){
 
@@ -17,18 +20,47 @@ switch ($_REQUEST['action']){
         $user['gold'] = $user['gold'] + $_REQUEST['gold'];
         break;
 
+    case "unequipItem2":
+    foreach ($user['inv'] as $key => $value){
+        if($key == $type){
+            $item = $value;
+            if (empty($item)){
+              die();
+            }
+            foreach ($user['bag'] as $key => $value){
+                if($value['name'] == $item){
+                  $stat['int'] = $value['stats'];
+                  $stat['val'] = $value['stat'];
+                }
+            }
+        }
+    }
+    $user['inv'][$type] = "";
+    if($stat['val'] !== 'other'){
+      $user['stats'][$stat['val']] = $user['stats'][$stat['val']] - intval($stat['int']);
+    }
+    break;
+
     case "unequipItem":
         foreach ($user['inv'] as $key => $value){
             if($value == $item){
                 $type = $key;
+                foreach ($user['bag'] as $key => $value){
+                    if($value['name'] == $item){
+                      $stat['int'] = $value['stats'];
+                      $stat['val'] = $value['stat'];
+                    }
+                }
             }
         }
         $user['inv'][$type] = "";
+        if($stat['val'] !== 'other'){
+          $user['stats'][$stat['val']] = $user['stats'][$stat['val']] - intval($stat['int']);
+        }
         break;
 
     case "addItem":
         $user['bag'][] = array("type" => $_REQUEST['itemType'], "name" => $_REQUEST['itemName'], "stats" => $_REQUEST['statMod'], "stat" => $_REQUEST['stat'], "desc" => $_REQUEST['desc'], "cost" => $_REQUEST['cost']);
-        print_r($_REQUEST['statMod']);
         break;
 
     case "sellItem":
@@ -51,14 +83,19 @@ switch ($_REQUEST['action']){
         break;
 
     case "equipItem":
+
         foreach ($user['bag'] as $value){
             if($value['name'] == $item){
                 $type = $value['type'];
-                $stat['int'] = $value['stat']
+                $stat['int'] = $value['stats'];
+                $stat['val'] = $value['stat'];
             }
         }
-        $user['inv'][$type] = $item;
+          $user['inv'][$type] = $item;
 
+        if($stat['val'] !== 'other'){
+          $user['stats'][$stat['val']] = $user['stats'][$stat['val']] + intval($stat['int']);
+        }
         break;
 
     case "reroll":

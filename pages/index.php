@@ -106,7 +106,7 @@ $lvl = $lf->getLevel($exp);
 
             <ul class="nav navbar-top-links navbar-right">
 
-            
+
             </ul>
             <!-- /.navbar-top-links -->
 
@@ -170,7 +170,7 @@ $lvl = $lf->getLevel($exp);
                                 echo "<td>$key: </td>";
                                 echo "<td>$item</td>";
                                 if ($item) {
-                                    echo "<td><button class='btn btn-danger itemUnEquip' data-uname='".$uname."' value='".$item."'>Un-Equip</button></td>";
+                                    echo "<td><button class='btn btn-danger itemUnEquip' data-type='".$key."' data-uname='".$uname."' value='".$item."'>Un-Equip</button></td>";
                                 }
                                 echo "</tr>";
                             }
@@ -196,11 +196,10 @@ $lvl = $lf->getLevel($exp);
                                 foreach($user['bag'] as $item) {
                                     echo "<tr>";
                                     echo "<td>".$item['type']."</td>";
-                                    echo "<td data-original-title='test'
-                data-toggle='tooltip' data-placement='bottom'>".$item['name']."</td>";
+                                    echo "<td title='".$item['desc']."'>".$item['name']."</td>";
                                     echo "<td>".$item['stats']." ". $item['stat']."</td>";
                                     echo "<td>".$item['cost']."g</td>";
-                                    echo "<td><button class='btn btn-primary itemEquip' data-uname='".$uname."' value='".$item['name']."'>Equip</button></td>";
+                                    echo "<td><button class='btn btn-primary itemEquip' data-type='".$item['type']."' data-uname='".$uname."' value='".$item['name']."'>Equip</button></td>";
                                     echo "<td><button class='btn btn-success sellItem' data-uname='".$uname."' value='".$item['name']."'>Sell</button></td>";
                                     echo "</tr>";
                                 }
@@ -211,14 +210,14 @@ $lvl = $lf->getLevel($exp);
                 <div class="col-lg-3">
                     <div class="col-lg-12 fa-border">
                         <h4>TODO</h4>
-                        <?php if (5 - $user['statRolls'] !== 0){ echo '<button data-uname="'.$uname.'" id="reroll" class="btn-success button left">ReRoll ('.(5 - $user['statRolls']).' left)</button><br><br>';
+                        <?php if (5 - $user['statRolls'] !== 0){ echo '<button data-uname="'.$uname.'" id="reroll" class="btn btn-success button left">ReRoll ('.(5 - $user['statRolls']).' left)</button><br><br>';
     echo '<button type="button" id="satisfiedButton" class="btn btn-primary" data-uname="'.$uname.'">Satisfied with Stats?</button><br><br>';}
-                        if($align == ''){ echo '<button type="button" id="setAlignButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setAlign" class="btn-primary">Set Alignment</button><br><br>';}
-                         if($fullName == ' '){ echo '<button type="button" id="setNameButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setName" class="btn-primary">Set Name</button><br><br>';}
-                        if($age == ''){ echo '<button type="button" id="setAgeButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setAge" class="btn-primary">Set Age</button><br><br>';}
-                        if($race == ''){ echo '<button type="button" id="setRaceButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setRace" class="btn-primary">Set Race</button><br><br>';}
-                        if($class == ''){ echo '<button type="button" id="setClassButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setClass" class="btn-primary">Set Class</button><br><br>';}
-                        if($gender == ''){ echo '<button type="button" id="setGenderButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setGender" class="btn-primary">Set Gender</button><br><br>';}
+                        if($align == ''){ echo '<button type="button" id="setAlignButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setAlign" class="btn btn-primary">Set Alignment</button><br><br>';}
+                         if($fullName == ' '){ echo '<button type="button" id="setNameButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setName" class="btn btn-primary">Set Name</button><br><br>';}
+                        if($age == ''){ echo '<button type="button" id="setAgeButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setAge" class="btn btn-primary">Set Age</button><br><br>';}
+                        if($race == ''){ echo '<button type="button" id="setRaceButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setRace" class="btn btn-primary">Set Race</button><br><br>';}
+                        if($class == ''){ echo '<button type="button" id="setClassButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setClass" class="btn btn-primary">Set Class</button><br><br>';}
+                        if($gender == ''){ echo '<button type="button" id="setGenderButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setGender" class="btn btn-primary">Set Gender</button><br><br>';}
                         ?>
                     </div>
                 </div>
