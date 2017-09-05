@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9cf06011-8796-4d4c-8c7a-bb5c1154610c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/webServers.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/dataFormat.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/dm-log.txt" afterPath="$PROJECT_DIR$/data/dm-log.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dmActions.js" afterPath="$PROJECT_DIR$/js/dmActions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/playerActions.js" afterPath="$PROJECT_DIR$/js/playerActions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/dm.php" afterPath="$PROJECT_DIR$/pages/dm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/index.php" afterPath="$PROJECT_DIR$/pages/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -73,11 +65,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="playerActions.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="playerActions.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/playerActions.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="840">
               <caret line="123" column="55" lean-forward="false" selection-start-line="123" selection-start-column="55" selection-end-line="123" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="5" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -151,7 +153,6 @@
         <option value="$PROJECT_DIR$/chars/template.json" />
         <option value="$PROJECT_DIR$/pages/playerModals.html" />
         <option value="$PROJECT_DIR$/pages/dmModals.php" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/php/dmLogging.php" />
         <option value="$PROJECT_DIR$/php/actions.php" />
         <option value="$PROJECT_DIR$/chars/kiliso.json" />
@@ -161,6 +162,7 @@
         <option value="$PROJECT_DIR$/pages/index.php" />
         <option value="$PROJECT_DIR$/js/dmActions.js" />
         <option value="$PROJECT_DIR$/js/playerActions.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -477,7 +479,7 @@
       <workItem from="1504019694518" duration="14253000" />
       <workItem from="1504328875146" duration="30426000" />
       <workItem from="1504625170165" duration="286000" />
-      <workItem from="1504635759749" duration="4166000" />
+      <workItem from="1504635759749" duration="4347000" />
     </task>
     <task id="LOCAL-00001" summary="Added more php code, gave dm ability to give/take gold, give items, allows player to set name, alignment, show bag, fixed reroll code.">
       <created>1504414614028</created>
@@ -490,7 +492,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52355000" />
+    <option name="totallyTimeSpent" value="52536000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -504,7 +506,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32958034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39918116" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -741,14 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="16" lean-forward="false" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/chars/.json" />
     <entry file="file://$PROJECT_DIR$/php/dmLogging.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -844,6 +838,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
           <caret line="123" column="55" lean-forward="false" selection-start-line="123" selection-start-column="55" selection-end-line="123" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="5" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
           <folding />
         </state>
       </provider>
