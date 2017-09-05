@@ -15,6 +15,7 @@ $(document).ready(function() {
         $.post(ajaxUrl, function () {
             var log = uname + " has rerolled their stats.";
             addToLog(log);
+            location.reload();
         });
     });
 
@@ -24,6 +25,7 @@ $(document).ready(function() {
         $.post(ajaxUrl, function () {
             var log = uname + " has rerolled their stats.";
             addToLog(log);
+            location.reload();
         });
     });
     $('.itemEquip').click(function(){
@@ -36,6 +38,7 @@ $(document).ready(function() {
               $.post(ajaxUrl2, function (e) {
                   var log = uname + " equiped " + item;
                   addToLog(log);
+                  location.reload();
               });
         });
     });
@@ -45,6 +48,7 @@ $(document).ready(function() {
             log = user + " sold their " + item;
         addToLog(log);
         sellItem(user, item)
+        location.reload();
 
     });
 
@@ -55,6 +59,7 @@ $(document).ready(function() {
         $.post(ajaxUrl, function () {
             var log = uname + " unequiped " + item;
             addToLog(log);
+            location.reload();
         });
     });
     // Setting name function
@@ -121,9 +126,7 @@ $(document).ready(function() {
     function addToLog(data){
         var now = new Date(),
             date = now.format("m/dd/yy H:M:ss");
-        console.log(data);
         var newData = data.replace (/^/, date + ' - ');
-        console.log(newData);
         var ajaxUrl = '/php/actions.php?action=dmLog&log=' + newData;
         $.post(ajaxUrl, function(){
             console.log("Action Logged -- " + newData);

@@ -85,6 +85,10 @@ $lvl = $lf->getLevel($exp);
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
 
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" />
+
+
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -125,10 +129,10 @@ $lvl = $lf->getLevel($exp);
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                          <a href="#" data-toggle="modal" data-target="#newUser"><i class="fa fa-dashboard fa-fw"></i>New User</a>
+                          <a href="#" data-toggle="modal" data-target="#newUser"><i class="fa fa-plus-circle fa-fw"></i>New User</a>
                             <?php
                             foreach ($users as $u) {
-                                echo '<a href="index.php?'.substr($u, 0, -5).'"><i class="fa fa-dashboard fa-fw"></i>'. substr($u, 0, -5) .'</a>';
+                                echo '<a href="index.php?'.substr($u, 0, -5).'"><i class="fa fa-user fa-fw"></i>'. substr($u, 0, -5) .'</a>';
                             }
                             ?>
                         </li>
