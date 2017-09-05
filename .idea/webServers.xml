@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7f9727eb-ad64-4fad-9b88-7115b7785e55" name="dnd" url="http://18.220.247.34">
+        <fileTransfer host="18.220.247.34" port="22" privateKey="$USER_HOME$/.ssh/dndec2" rootFolder="/var/www/html" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

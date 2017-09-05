@@ -115,7 +115,7 @@ foreach ($users as $user){
                     DM Log
                 </h4>
                 <div class="col-lg-12 fa-border left">
-                  <textarea rows="15" class="form-control dm-log"></textarea>
+                  <textarea rows="30" class="form-control dm-log"></textarea>
             </div>
             </div>
         </div>
@@ -137,7 +137,7 @@ foreach ($users as $user){
 
 <!-- Custom Theme JavaScript -->
 <script src="../dist/js/sb-admin-2.js"></script>
-
+<script src="../js/dataFormat.js"></script>
 <script src="../js/dmActions.js"></script>
 <?php include 'dmModals.php'; ?>
 </body>

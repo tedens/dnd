@@ -238,6 +238,7 @@ $lvl = $lf->getLevel($exp);
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
+    <script src="../js/dataFormat.js"></script>
 
     <script src="../js/playerActions.js"></script>
 <?php include 'playerModals.html'; ?>

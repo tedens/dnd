@@ -22,7 +22,7 @@ $(document).ready(function() {
             var user = $(this).text(),
                 ajaxUrl = '/php/actions.php?action=setExp&exp=' + exp + '&user=' + user;
             $.post(ajaxUrl, function(){
-                var log = "Added " + exp +" exp to " + user + "'.";
+                var log = "Added " + exp +" exp to " + user + ".";
                 addToLog(log);
                 dmLog();
                 $('#giveExp').modal('toggle');
@@ -57,7 +57,7 @@ $(document).ready(function() {
             mod = $("#mod").find(":selected").val(),
             ajaxUrl = '/php/actions.php?action=addItem&itemType='+ itemType +'&itemName=' + itemName + '&statMod=' + mod + stats + '&stat='+ stat + '&desc=' + desc + '&cost=' + cost + '&user=' + user;
         $.post(ajaxUrl, function(){
-            var log = "Added " + itemName +" with a " + mod + stats + " " + stat+ "to " + user + "'s inventory.";
+            var log = "Added " + itemName +" with a " + mod + stats + " " + stat+ " to " + user + "'s inventory.";
             addToLog(log);
             dmLog();
             $('#manageInv').modal('toggle');
@@ -66,7 +66,12 @@ $(document).ready(function() {
     });
 
     function addToLog(data){
-        var ajaxUrl = '/php/actions.php?action=dmLog&log=' + data;
+        var now = new Date(),
+            date = now.format("m/dd/yy H:M:ss");
+        console.log(data);
+        var newData = data.replace (/^/, date + ' - ');
+        console.log(newData);
+        var ajaxUrl = '/php/actions.php?action=dmLog&log=' + newData;
         $.post(ajaxUrl, function(data){
             dmLog();
         });
@@ -80,6 +85,12 @@ $(document).ready(function() {
             $('.dm-log').html(data.replace('n',''));
         });
     }
+
+    // for when users update the log
+
+    $(function () {
+        setInterval(dmLog, 5000);
+    });
 
 
 });

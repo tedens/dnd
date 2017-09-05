@@ -4,6 +4,7 @@ $(document).ready(function() {
             if(willAlert >= 1) {
                 alert(data);
             }
+
             location.reload();
         });
     }
@@ -12,7 +13,8 @@ $(document).ready(function() {
         var uname = $(this).data('uname'),
             ajaxUrl = '/php/actions.php?action=reroll&user=' + uname;
         $.post(ajaxUrl, function () {
-            location.reload();
+            var log = uname + " has rerolled their stats.";
+            addToLog(log);
         });
     });
 
@@ -20,7 +22,8 @@ $(document).ready(function() {
         var uname = $(this).data('uname'),
             ajaxUrl = '/php/actions.php?action=satisfy&user=' + uname;
         $.post(ajaxUrl, function () {
-            location.reload();
+            var log = uname + " has rerolled their stats.";
+            addToLog(log);
         });
     });
     $('.itemEquip').click(function(){
@@ -30,16 +33,17 @@ $(document).ready(function() {
             ajaxUrl = '/php/actions.php?action=unequipItem2&user=' + uname + '&type=' + type,
             ajaxUrl2 = '/php/actions.php?action=equipItem&user=' + uname + '&item=' + item;
         $.post(ajaxUrl, function (e) {
-          console.log(e);
               $.post(ajaxUrl2, function (e) {
-                console.log(e)
-                location.reload();
+                  var log = uname + " equiped " + item;
+                  addToLog(log);
               });
         });
     });
     $('.sellItem').click(function(){
         var user = $(this).data('uname'),
-            item = $(this).val();
+            item = $(this).val(),
+            log = user + " sold their " + item;
+        addToLog(log);
         sellItem(user, item)
 
     });
@@ -49,7 +53,8 @@ $(document).ready(function() {
             item = $(this).val(),
             ajaxUrl = '/php/actions.php?action=unequipItem&user=' + uname + '&item=' + item;
         $.post(ajaxUrl, function () {
-            location.reload();
+            var log = uname + " unequiped " + item;
+            addToLog(log);
         });
     });
     // Setting name function
@@ -106,6 +111,18 @@ $(document).ready(function() {
     function sellItem(user, item){
         var ajaxUrl = '/php/actions.php?action=sellItem&user=' + user + '&item=' + item;
         post(ajaxUrl, 1);
+    }
+
+    function addToLog(data){
+        var now = new Date(),
+            date = now.format("m/dd/yy H:M:ss");
+        console.log(data);
+        var newData = data.replace (/^/, date + ' - ');
+        console.log(newData);
+        var ajaxUrl = '/php/actions.php?action=dmLog&log=' + newData;
+        $.post(ajaxUrl, function(){
+            console.log("Action Logged -- " + newData);
+        });
     }
 
 });
