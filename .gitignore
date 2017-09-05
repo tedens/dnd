@@ -3,3 +3,4 @@ bower_components
 /chars/*
 !/chars/template.json
 .remote-sync.json
+/data/dm-log.txt

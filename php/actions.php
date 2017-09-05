@@ -6,7 +6,10 @@
  * Time: 9:37 AM
  */
 
-$user = json_decode(file_get_contents("../chars/".$_REQUEST['user'].".json"), true);
+if (isset($_REQUEST['user'])){
+    $user = json_decode(file_get_contents("../chars/".$_REQUEST['user'].".json"), true);
+
+}
 if (isset($_REQUEST['item'])){
     $item = $_REQUEST['item'];
 }
@@ -139,7 +142,17 @@ switch ($_REQUEST['action']){
     case "satisfy":
         $user['statRolls'] = 5;
         break;
+
+    case "dmLog":
+        include 'dmLogging.php';
+        $logger = new dmLogging();
+        $data = $logger->addToLog($_REQUEST['log']);
+        echo $data;
+        break;
 }
 
-$newUser = json_encode($user);
-file_put_contents("../chars/".$_REQUEST['user'].".json", $newUser);
+if (isset($user)) {
+
+    $newUser = json_encode($user);
+    file_put_contents("../chars/" . $_REQUEST['user'] . ".json", $newUser);
+}

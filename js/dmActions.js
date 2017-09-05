@@ -1,9 +1,15 @@
 $(document).ready(function() {
+    dmLog();
     $('#saveGold').click(function () {
         var gold = $("#goldAmount").val();
         $('#goldList :selected').each(function() {
-            var ajaxUrl = '/php/actions.php?action=gold&gold=' + gold + '&user=' + $(this).text();
+            var user = $(this).text();
+            var ajaxUrl = '/dnd/php/actions.php?action=gold&gold=' + gold + '&user=' + user;
             $.post(ajaxUrl, function(){
+                var log = "Added " + gold +" gold to " + user + "'s balance.";
+                addToLog(log);
+                dmLog();
+                $('#giveGold').modal('toggle');
 
             })
         });
@@ -48,12 +54,22 @@ $(document).ready(function() {
 
     });
 
+    function addToLog(data){
+        var ajaxUrl = '/dnd/php/actions.php?action=dmLog&log=' + data;
+        $.post(ajaxUrl, function(data){
+            dmLog();
+        });
+    }
+
     function dmLog(){
-      var file = '../data/dm-log.txt';
-    jQuery.get(file, function(data) {
-      //process text file line by line
-      $('.dm-log').html(data.replace('n',''));
-    });
-  }
-  dmLog();
+        $('.dm-log').html("");
+        var file = '../data/dm-log.txt';
+        jQuery.get(file, function(data) {
+            //process text file line by line
+            $('.dm-log').html(data.replace('n',''));
+        });
+    }
+
+
 });
+
