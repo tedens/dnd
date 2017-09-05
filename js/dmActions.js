@@ -19,9 +19,13 @@ $(document).ready(function() {
     $('#saveExp').click(function () {
         var exp = $("#exp").val();
         $('#players :selected').each(function() {
-            var ajaxUrl = '/php/actions.php?action=setExp&exp=' + exp + '&user=' + $(this).text();
+            var user = $(this).text(),
+                ajaxUrl = '/php/actions.php?action=setExp&exp=' + exp + '&user=' + user;
             $.post(ajaxUrl, function(){
-
+                var log = "Added " + exp +" exp to " + user + "'.";
+                addToLog(log);
+                dmLog();
+                $('#giveExp').modal('toggle');
             })
         });
 
@@ -30,9 +34,13 @@ $(document).ready(function() {
     $('#saveHp').click(function () {
         var hp = $("#hp").val();
         $('#playersHpList :selected').each(function() {
-            var ajaxUrl = '/php/actions.php?action=setHp&hp=' + hp + '&user=' + $(this).text();
+            var user = $(this).text(),
+                ajaxUrl = '/php/actions.php?action=setHp&hp=' + hp + '&user=' + user;
             $.post(ajaxUrl, function(){
-
+                var log = "Added " + hp +" HP to " + user + ".";
+                addToLog(log);
+                dmLog();
+                $('#modHealth').modal('toggle');
             })
         });
 
@@ -49,7 +57,10 @@ $(document).ready(function() {
             mod = $("#mod").find(":selected").val(),
             ajaxUrl = '/php/actions.php?action=addItem&itemType='+ itemType +'&itemName=' + itemName + '&statMod=' + mod + stats + '&stat='+ stat + '&desc=' + desc + '&cost=' + cost + '&user=' + user;
         $.post(ajaxUrl, function(){
-
+            var log = "Added " + itemName +" with a " + mod + stats + " " + stat+ "to " + user + "'s inventory.";
+            addToLog(log);
+            dmLog();
+            $('#manageInv').modal('toggle');
         })
 
     });
