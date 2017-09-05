@@ -87,7 +87,7 @@ foreach ($users as $user){
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">DM Stuff</h1>
+                <h1 class="page-header">DM Page</h1>
 
             </div>
             <!-- /.col-lg-12 -->
@@ -101,7 +101,7 @@ foreach ($users as $user){
                     <?php
                     foreach ($users as $u){
                         $jsonUser = json_decode(file_get_contents("../chars/$u", true));
-                        echo "<ul>".substr($u, 0, -5)." --- Character Name: ".$jsonUser->firstname." ".$jsonUser->lastname." </ul>";
+                        echo "<ul>".substr($u, 0, -5)." --- Character Name: ".$jsonUser->firstname." ".$jsonUser->lastname." -- Gold: ". $jsonUser->gold."g -- HP: ".$jsonUser->hp."</ul>";
                     }
                     ?>
                     <button id="giveGoldButton" data-toggle="modal" data-target="#giveGold" class="btn btn-warning">Manage Gold</button><br><br>
@@ -109,6 +109,14 @@ foreach ($users as $user){
                     <button id="giveItemButton" data-toggle="modal" data-target="#manageInv" class="btn btn-primary">Give Player Items</button>
 
                 </div>
+            </div>
+            <div class="col-lg-6">
+                <h4>
+                    DM Log
+                </h4>
+                <div class="col-lg-12 fa-border left">
+                  <textarea rows="15" class="form-control dm-log"></textarea>
+            </div>
             </div>
         </div>
     </div>

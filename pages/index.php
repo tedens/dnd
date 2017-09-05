@@ -22,7 +22,7 @@ $age = $user['age'];
 $race = $user['race'];
 $class = $user['class'];
 $gender = $user['sex'];
-
+$hp = $user['hp'];
 
 
 //get ability modify info
@@ -141,6 +141,7 @@ $lvl = $lf->getLevel($exp);
                         echo "<ul>Gender: $gender</ul>";
                         echo "<ul>Age: $age</ul>";
                         echo "<ul>Alignment: $align</ul>";
+                        echo "<ul>HP: $hp</ul>";
 
                         echo "<hr>";
                         foreach ($user['stats'] as $key => $st){

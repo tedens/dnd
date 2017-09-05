@@ -4,7 +4,7 @@ $(document).ready(function() {
         $('#goldList :selected').each(function() {
             var ajaxUrl = '/php/actions.php?action=gold&gold=' + gold + '&user=' + $(this).text();
             $.post(ajaxUrl, function(){
-                location.reload();
+
             })
         });
 
@@ -15,7 +15,18 @@ $(document).ready(function() {
         $('#players :selected').each(function() {
             var ajaxUrl = '/php/actions.php?action=setExp&exp=' + exp + '&user=' + $(this).text();
             $.post(ajaxUrl, function(){
-                location.reload();
+
+            })
+        });
+
+    });
+
+    $('#saveHp').click(function () {
+        var hp = $("#hp").val();
+        $('#playersHpList :selected').each(function() {
+            var ajaxUrl = '/php/actions.php?action=setHp&hp=' + hp + '&user=' + $(this).text();
+            $.post(ajaxUrl, function(){
+
             })
         });
 
@@ -32,9 +43,17 @@ $(document).ready(function() {
             mod = $("#mod").find(":selected").val(),
             ajaxUrl = '/php/actions.php?action=addItem&itemType='+ itemType +'&itemName=' + itemName + '&statMod=' + mod + stats + '&stat='+ stat + '&desc=' + desc + '&cost=' + cost + '&user=' + user;
         $.post(ajaxUrl, function(){
-            location.reload();
+
         })
 
     });
 
+    function dmLog(){
+      var file = '../data/dm-log.txt';
+    jQuery.get(file, function(data) {
+      //process text file line by line
+      $('.dm-log').html(data.replace('n',''));
+    });
+  }
+  dmLog();
 });

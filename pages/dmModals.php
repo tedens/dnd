@@ -148,3 +148,40 @@
 
     </div>
 </div>
+
+<div id="modHealth" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Give/Take HP from character(s)</h4>
+            </div>
+            <div class="modal-body">
+                <p>Select which characters are receiving or losing HP.</p>
+            </div>
+            <form style="margin: 5px 20px;">
+                <label>
+                    HP Amount:
+                </label>
+                <input id="hp" name="hp"  onkeypress="return event.keyCode!=13"><br/>
+                <select id="playerHpList" multiple>
+                    <?php
+                    foreach ($users as $user){
+                        $user = substr($user, 0, -5);
+                        echo "<option value=\"$user\">$user</option>";
+                    };
+                    ?>
+                </select>
+                <br>
+                <br>
+                <button id="saveHp" type="button" class="btn btn-info">Save</button>
+            </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
