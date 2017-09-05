@@ -108,6 +108,14 @@ $(document).ready(function() {
         });
     });
 
+    $('#saveUser').click(function(){
+        var uname = $("#username").val(),
+            ajaxUrl = '/php/actions.php?action=newUser&user=' + uname;
+        $.post(ajaxUrl, function () {
+            location.reload();
+        });
+    });
+
     function sellItem(user, item){
         var ajaxUrl = '/php/actions.php?action=sellItem&user=' + user + '&item=' + item;
         post(ajaxUrl, 1);

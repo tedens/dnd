@@ -14,8 +14,8 @@
                 <label>
                     Gold Amount:
                 </label>
-                <input id="goldAmount" name="goldAmount"  onkeypress="return event.keyCode!=13"><br/>
-                <select id="goldList" multiple>
+                <input id="goldAmount" name="goldAmount" required onkeypress="return event.keyCode!=13"><br/>
+                <select id="goldList" multiple required>
                     <?php
                     foreach ($users as $user){
                         $user = substr($user, 0, -5);
@@ -51,8 +51,8 @@
                 <label>
                     Exp Amount:
                 </label>
-                <input id="exp" name="exp"  onkeypress="return event.keyCode!=13"><br/>
-                <select id="players" multiple>
+                <input id="exp" name="exp" required onkeypress="return event.keyCode!=13"><br/>
+                <select id="players" multiple required>
                     <?php
                     foreach ($users as $user){
                         $user = substr($user, 0, -5);
@@ -88,17 +88,17 @@
                 <label for="itemType">
                     Type:
                 </label>
-                <select id="itemType">
+                <select id="itemType" required>
                     <?php
                     foreach($template->inv as $key => $item) {
                         echo "<option value='$key'>$key</option>";
                     }
                     ?>
                 </select><br /><br />
-                <label for="itemName">
+                <label for="itemName" required>
                     Item name:
                 </label>
-                <input id="itemName" name="itemName"  onkeypress="return event.keyCode!=13"><br/><br />
+                <input id="itemName" name="itemName" required onkeypress="return event.keyCode!=13"><br/><br />
                 <label for="stat">
                     Stat Modifier (+2):
                 </label>
@@ -106,8 +106,8 @@
                     <option value="%2B">+</option>
                     <option value="-">-</option>
                 </select>
-                <input id="statMod" name="statMod"  onkeypress="return event.keyCode!=13">
-                <select id="stat">
+                <input id="statMod" name="statMod" required onkeypress="return event.keyCode!=13">
+                <select id="stat" required>
                     <?php
                     foreach($template->stats as $key => $value){
                         echo "<option value='$key'>$key</option>";
@@ -121,15 +121,15 @@
                 <label for="cost">
                     Worth in Gold?:
                 </label>
-                <input id="cost" name="cost"  onkeypress="return event.keyCode!=13"><br /><br />
+                <input id="cost" name="cost" required onkeypress="return event.keyCode!=13"><br /><br />
                 <label for="desc">
                     Item Description:
                 </label>
-                <input id="desc" name="desc"  onkeypress="return event.keyCode!=13"><br><br>
+                <input id="desc" name="desc" required onkeypress="return event.keyCode!=13"><br><br>
                 <label for="playerList">
                     Player Name:
                 </label>
-                <select id="playerList">
+                <select id="playerList" required>
                     <?php
                     foreach ($users as $user){
                         $user = substr($user, 0, -5);
@@ -165,8 +165,8 @@
                 <label>
                     HP Amount:
                 </label>
-                <input id="hp" name="hp"  onkeypress="return event.keyCode!=13"><br/>
-                <select id="playerHpList" multiple>
+                <input id="hp" name="hp" required onkeypress="return event.keyCode!=13"><br/>
+                <select id="playerHpList" multiple required>
                     <?php
                     foreach ($users as $user){
                         $user = substr($user, 0, -5);

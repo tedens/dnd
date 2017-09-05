@@ -15,12 +15,12 @@
                 <label>
                     First Name:
                 </label>
-                <input id="firstName" name="firstName" onkeypress="return event.keyCode!=13" />
+                <input id="firstName" name="firstName" required onkeypress="return event.keyCode!=13" />
                 <br>
                 <label>
                     Last Name:
                 </label>
-                <input id="lastName" name="lastName" onkeypress="return event.keyCode!=13" />
+                <input id="lastName" name="lastName" required onkeypress="return event.keyCode!=13" />
                 <br>
                 <button id="saveName" type="button" class="btn btn-info" data-uname="<?php echo $uname; ?>">Save</button>
             </form>
@@ -49,7 +49,7 @@
                 <label>
                     Age:
                 </label>
-                <input id="age" name="age" onkeypress="return event.keyCode!=13" />
+                <input id="age" name="age" required onkeypress="return event.keyCode!=13" />
                 <br>
                 <button id="saveAge" type="button" class="btn btn-info" data-uname="<?php echo $uname; ?>">Save</button>
             </form>
@@ -78,7 +78,7 @@
                 <label>
                     Age:
                 </label>
-                <input id="gender" name="gender" onkeypress="return event.keyCode!=13"/>
+                <input id="gender" name="gender" required onkeypress="return event.keyCode!=13"/>
                 <br>
                 <button id="saveGender" type="button" class="btn btn-info" data-uname="<?php echo $uname; ?>">Save</button>
             </form>
@@ -109,7 +109,7 @@
                     Alignment:
                 </label>
 
-                <select id="alignSelect">
+                <select id="alignSelect" required>
                     <option>
                         Lawful Good
                     </option>
@@ -168,7 +168,7 @@
                     Race:
                 </label>
 
-                <select id="race">
+                <select id="race" required>
                     <option>Dragonborn</option>
                     <option>Dwarf</option>
                     <option>Elf</option>
@@ -209,7 +209,7 @@
                     Race:
                 </label>
 
-                <select id="class">
+                <select id="class" required>
                     <option>Barbarian</option>
                     <option>Bard</option>
                     <option>Cleric</option>
@@ -226,6 +226,35 @@
 
                 <br>
                 <button id="saveClass" type="button" class="btn btn-info" data-uname="<?php echo $uname; ?>">Save</button>
+            </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="newUser" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Create a new user</h4>
+            </div>
+            <div class="modal-body">
+                <p>Please type in a user that everyone will recognize it is you. (This is not your characters name)</p>
+            </div>
+            <form style="margin: 5px 20px;">
+                <label>
+                    Username:
+                </label>
+                <input id="username" name="username" required onkeypress="return event.keyCode!=13" />
+                <br>
+                <button id="saveUser" type="button" class="btn btn-info">Save</button>
             </form>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

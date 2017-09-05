@@ -2,14 +2,28 @@
 //classmap without using composer autoload
 include '../php/classmap.php';
 
+// get list of all users
+$users = scandir('../chars/');
+
+foreach ($users as $Player) {
+
+    if (($Player == '.') || ($Player == '..') || ($Player == 'template.json')) {
+        $key = array_search($Player, $users);
+        unset($users[$key]);
+    }
+}
+
 //get current user to view
 $uname = $_SERVER['QUERY_STRING'];
+
 
 if (file_exists('../chars/'.$uname.'.json')) {
     $user = json_decode(file_get_contents("../chars/$uname.json"), true);
 } else {
-    copy('../chars/template.json', '../chars/'.$uname.'.json');
-    $user = json_decode(file_get_contents("../chars/$uname.json"), true);
+    if (!empty($uname)) {
+        copy('../chars/template.json', '../chars/' . $uname . '.json');
+        $user = json_decode(file_get_contents("../chars/$uname.json"), true);
+    }
 }
 //get user json file since not using a db and convert to php array
 
@@ -111,7 +125,11 @@ $lvl = $lf->getLevel($exp);
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <?php
+                            foreach ($users as $u) {
+                                echo '<a href="index.php?'.substr($u, 0, -5).'"><i class="fa fa-dashboard fa-fw"></i>'. substr($u, 0, -5) .'</a>';
+                            }
+                            ?>
                         </li>
                     </ul>
                 </div>

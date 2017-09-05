@@ -115,7 +115,7 @@ foreach ($users as $user){
                     DM Log
                 </h4>
                 <div class="col-lg-12 fa-border left">
-                  <textarea rows="30" class="form-control dm-log"></textarea>
+                  <textarea rows="30" readonly class="form-control dm-log"></textarea>
             </div>
             </div>
         </div>
