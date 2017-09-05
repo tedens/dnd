@@ -4,7 +4,7 @@ $(document).ready(function() {
         var gold = $("#goldAmount").val();
         $('#goldList :selected').each(function() {
             var user = $(this).text();
-            var ajaxUrl = '/dnd/php/actions.php?action=gold&gold=' + gold + '&user=' + user;
+            var ajaxUrl = '/php/actions.php?action=gold&gold=' + gold + '&user=' + user;
             $.post(ajaxUrl, function(){
                 var log = "Added " + gold +" gold to " + user + "'s balance.";
                 addToLog(log);
@@ -55,7 +55,7 @@ $(document).ready(function() {
     });
 
     function addToLog(data){
-        var ajaxUrl = '/dnd/php/actions.php?action=dmLog&log=' + data;
+        var ajaxUrl = '/php/actions.php?action=dmLog&log=' + data;
         $.post(ajaxUrl, function(data){
             dmLog();
         });
