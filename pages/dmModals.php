@@ -14,7 +14,7 @@
                 <label>
                     Gold Amount:
                 </label>
-                <input id="goldAmount" name="goldAmount"><br/>
+                <input id="goldAmount" name="goldAmount"  onkeypress="return event.keyCode!=13"><br/>
                 <select id="goldList" multiple>
                     <?php
                     foreach ($users as $user){
@@ -51,7 +51,7 @@
                 <label>
                     Exp Amount:
                 </label>
-                <input id="exp" name="exp"><br/>
+                <input id="exp" name="exp"  onkeypress="return event.keyCode!=13"><br/>
                 <select id="players" multiple>
                     <?php
                     foreach ($users as $user){
@@ -98,7 +98,7 @@
                 <label for="itemName">
                     Item name:
                 </label>
-                <input id="itemName" name="itemName"><br/><br />
+                <input id="itemName" name="itemName"  onkeypress="return event.keyCode!=13"><br/><br />
                 <label for="stat">
                     Stat Modifier (+2):
                 </label>
@@ -106,7 +106,7 @@
                     <option value="%2B">+</option>
                     <option value="-">-</option>
                 </select>
-                <input id="statMod" name="statMod">
+                <input id="statMod" name="statMod"  onkeypress="return event.keyCode!=13">
                 <select id="stat">
                     <?php
                     foreach($template->stats as $key => $value){
@@ -121,11 +121,11 @@
                 <label for="cost">
                     Worth in Gold?:
                 </label>
-                <input id="cost" name="cost"><br /><br />
+                <input id="cost" name="cost"  onkeypress="return event.keyCode!=13"><br /><br />
                 <label for="desc">
                     Item Description:
                 </label>
-                <input id="desc" name="desc"><br><br>
+                <input id="desc" name="desc"  onkeypress="return event.keyCode!=13"><br><br>
                 <label for="playerList">
                     Player Name:
                 </label>
