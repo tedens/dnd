@@ -14,7 +14,6 @@ foreach ($users as $user){
 }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -141,5 +140,4 @@ foreach ($users as $user){
 <script src="../js/dmActions.js"></script>
 <?php include 'dmModals.php'; ?>
 </body>
-
 </html>
