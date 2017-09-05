@@ -109,11 +109,8 @@ $(document).ready(function() {
     });
 
     $('#saveUser').click(function(){
-        var uname = $("#username").val(),
-            ajaxUrl = '/php/actions.php?action=newUser&user=' + uname;
-        $.post(ajaxUrl, function () {
-            location.reload();
-        });
+        var uname = $("#username").val();
+          window.location.replace("index.php?" + uname);
     });
 
     function sellItem(user, item){

@@ -82,7 +82,7 @@ $(document).ready(function() {
         var file = '../data/dm-log.txt';
         jQuery.get(file, function(data) {
             //process text file line by line
-            $('.dm-log').html(data.replace('n',''));
+            $('.dm-log').html(data);
         });
     }
 
@@ -94,4 +94,3 @@ $(document).ready(function() {
 
 
 });
-
