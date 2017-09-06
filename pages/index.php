@@ -120,6 +120,8 @@ $lvl = $lf->getLevel($exp);
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
+              <button type="button" class="btn btn-success" style="margin-right: 15px;margin-top: 10px;" data-toggle="modal" data-target="#tradeItem">Trade Items</button>
+              <!-- <button type="button" class="btn btn-warning" style="margin-right: 15px;margin-top: 10px;" data-toggle="modal" data-target="tradeItem">Trade Gold</button> -->
 
 
             </ul>
@@ -264,7 +266,7 @@ $lvl = $lf->getLevel($exp);
     <script src="../js/dataFormat.js"></script>
 
     <script src="../js/playerActions.js"></script>
-<?php include 'playerModals.html'; ?>
+<?php include 'playerModals.php'; ?>
 </body>
 
 </html>

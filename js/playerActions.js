@@ -118,6 +118,21 @@ $(document).ready(function() {
           window.location.replace("index.php?" + uname);
     });
 
+    $('#tradeItemButton').click(function(){
+        var uname = $(this).data('uname'),
+            item = $("#itemToTrade").find(":selected").text(),
+            playerToTrade = $("#tradeList").find(":selected").text(),
+            ajaxUrl = '/php/actions.php?action=unequipItem&user=' + uname + '&item=' + item;
+            ajaxUrl2 = '/php/actions.php?action=tradeItem&user=' + uname + '&item='+ item + '&player=' + playerToTrade;
+            $.post(ajaxUrl, function (e) {
+                  $.post(ajaxUrl2, function (e) {
+                      var log = uname + " traded " + item + " to " + playerToTrade;
+                      addToLog(log);
+                      location.reload();
+                  });
+            });
+    });
+
     function sellItem(user, item){
         var ajaxUrl = '/php/actions.php?action=sellItem&user=' + user + '&item=' + item;
         post(ajaxUrl, 1);

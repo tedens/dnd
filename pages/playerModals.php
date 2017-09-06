@@ -263,3 +263,51 @@
 
     </div>
 </div>
+
+<!-- Modal -->
+<div id="tradeItem" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Transfer items to another player.</h4>
+            </div>
+            <div class="modal-body">
+                <p>Please select the item and player to send the trade.</p>
+            </div>
+            <form style="margin: 5px 20px;">
+                <label>
+                    Players:
+                </label>
+                <select id="tradeList" required>
+                  <?php
+                  foreach ($users as $tradeUser){
+                    $tradeUser = substr($tradeUser, 0, -5);
+                    echo "<option value=\"$tradeUser\">$tradeUser</option>";
+                  };
+                  ?>
+                </select>
+                <br>
+                <label>
+                    Item:
+                </label>
+                <select id="itemToTrade">
+                  <?php
+                      foreach($user['bag'] as $item) {
+                        echo '<option value="'.$item['name'].'">'.$item['name'].'</option>';
+                      }
+
+                   ?>
+                </select>
+                <br>
+                <button id="tradeItemButton" type="button" class="btn btn-info" data-uname="<?php echo $uname; ?>">Trade</button>
+            </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>

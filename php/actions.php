@@ -56,10 +56,12 @@ switch ($_REQUEST['action']){
                 }
             }
         }
+        if (isset($stat['val'])){
         $user['inv'][$type] = "";
         if($stat['val'] !== 'other'){
           $user['stats'][$stat['val']] = $user['stats'][$stat['val']] - intval($stat['int']);
         }
+      }
         break;
 
     case "addItem":
@@ -148,6 +150,29 @@ switch ($_REQUEST['action']){
         $logger = new dmLogging();
         $data = $logger->addToLog($_REQUEST['log']);
         echo $data;
+        break;
+
+    case "tradeItem":
+    $player = $_REQUEST['player'];
+
+        if (isset($item) || isset($player)){
+          $playerConf = json_decode(file_get_contents("../chars/".$player.".json"), true);
+          foreach ($user['bag'] as $key => $value){
+              if($value['name'] == $item){
+                  $itemId = $key;
+              }
+          }
+          $itemToTrade = $user['bag'][$itemId];
+          if (isset($itemToTrade)){
+            unset($user['bag'][$itemId]);
+            $playerConf['bag'][] = $itemToTrade;
+            $newPlayer = json_encode($playerConf);
+            file_put_contents("../chars/" . $player . ".json", $newPlayer);
+          }
+        } else {
+          echo "Bad trade";
+        }
+
         break;
 }
 
