@@ -1,0 +1,28 @@
+DND Todo List!
+
+☐ Allow DM to give stat points
+☐ Show Skills
+☐ Allow players to select skills in the beginning
+☐ Show Spells by Level
+☐ Allow users to select spells for each level during a rest
+☐ Allow DM to declare rest mode
+☐ Allow quiver addition/delete when arrows are used and picked up
+☐ Able to reroll stats with minimum based on class on certain stats
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+  ✔ Add item trade system @done(2017-09-05 22:34)
+  ✔ Add gold trade system @done(2017-09-05 22:35)
+  ✔ Allow DM to give items @done(2017-09-05 22:35)
+  ✔ Allow DM to give/take gold @done(2017-09-05 22:35)
+  ✔ Allow DM to give XP @done(2017-09-05 22:35)
+  ✔ Auto show level based on XP amount @done(2017-09-05 22:35)
+  ✔ Auto show Modifiers based on stat count @done(2017-09-05 22:35)
+  ✔ Show inventory @done(2017-09-05 22:35)
+  ✔ Show Bag @done(2017-09-05 22:35)
+  ✔ Show list of players as Nav @done(2017-09-05 22:35)
+  ✔ Show Log to DM so they can keep track of everything going on @done(2017-09-05 22:35)
+  ✔ Have DM log auto refresh every so often @done(2017-09-05 22:35)
+  ✔ Ability to sell Items from bag even if equiped (unequip item) @done(2017-09-05 22:35)
+  ✔ Auto create user based on request URI @done(2017-09-05 22:37)
+  ✔ Allow items to add/delete from base stats based on the stat the item provides (ex: a helmet with +2 Strength will add to the Strength base stat count) @done(2017-09-05 22:37)
