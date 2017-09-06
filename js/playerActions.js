@@ -113,6 +113,23 @@ $(document).ready(function() {
         });
     });
 
+    $('#tradeGoldButton').click(function(){
+        var uname = $(this).data('uname'),
+            usersGold = $(this).data('origgold'),
+            gold = $("#tradeGoldAmount").val(),
+            playerToTrade = $("#goldTradeList").find(":selected").text(),
+            ajaxUrl = '/php/actions.php?action=tradeGold&user=' + uname + '&gold='+ gold + '&player=' + playerToTrade;
+            if (gold > usersGold){
+              alert("You do not have that much gold.");
+            } else {
+              $.post(ajaxUrl, function () {
+                var log = uname + " gave " + gold + "g to " + playerToTrade;
+                addToLog(log);
+                location.reload();
+              });
+            }
+    });
+
     $('#saveUser').click(function(){
         var uname = $("#username").val();
           window.location.replace("index.php?" + uname);

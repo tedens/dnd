@@ -145,6 +145,17 @@ switch ($_REQUEST['action']){
         $user['statRolls'] = 5;
         break;
 
+    case "tradeGold":
+        $player = $_REQUEST['player'];
+        if (isset($_REQUEST['gold']) || isset($player)){
+          $playerConf = json_decode(file_get_contents("../chars/".$player.".json"), true);
+          $user['gold'] = $user['gold'] - abs($_REQUEST['gold']);
+          $playerConf['gold'] = $playerConf['gold'] + abs($_REQUEST['gold']);
+          $newPlayer = json_encode($playerConf);
+          file_put_contents("../chars/" . $player . ".json", $newPlayer);
+        }
+        break;
+
     case "dmLog":
         include 'dmLogging.php';
         $logger = new dmLogging();

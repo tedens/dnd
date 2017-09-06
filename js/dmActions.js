@@ -68,9 +68,7 @@ $(document).ready(function() {
     function addToLog(data){
         var now = new Date(),
             date = now.format("m/dd/yy H:M:ss");
-        console.log(data);
         var newData = data.replace (/^/, date + ' - ');
-        console.log(newData);
         var ajaxUrl = '/php/actions.php?action=dmLog&log=' + newData;
         $.post(ajaxUrl, function(data){
             dmLog();
