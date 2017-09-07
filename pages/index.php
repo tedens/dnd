@@ -7,7 +7,7 @@ $users = scandir('../chars/');
 
 foreach ($users as $Player) {
 
-    if (($Player == '.') || ($Player == '..') || ($Player == 'template.json')) {
+    if (($Player == '.') || ($Player == '..') || ($Player == 'template.json') || ($Player == 'dm.json')) {
         $key = array_search($Player, $users);
         unset($users[$key]);
     }
@@ -37,7 +37,7 @@ $race = $user['race'];
 $class = $user['class'];
 $gender = $user['sex'];
 $hp = $user['hp'];
-
+$maxHp = $user['maxHp'];
 
 //get ability modify info
 $am = new abilityModifer();
@@ -166,7 +166,8 @@ $lvl = $lf->getLevel($exp);
                         echo "<ul>Gender: $gender</ul>";
                         echo "<ul>Age: $age</ul>";
                         echo "<ul>Alignment: $align</ul>";
-                        echo "<ul>HP: $hp</ul>";
+                        echo "<ul>Current HP: $hp</ul>";
+                        echo "<ul>Max HP: $maxHp</ul>";
 
                         echo "<hr>";
                         foreach ($user['stats'] as $key => $st){

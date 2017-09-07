@@ -5,7 +5,7 @@ DND Todo List!
 ☐ Show Spells by Level
 ☐ Allow users to select spells for each level during a rest
 ☐ When rest mode active, heal all players to max hp
-☐ Add Max HP to players info
+✔ Add Max HP to players info @done(2017-09-07 18:59)
 ☐ Allow quiver addition/delete when arrows are used and picked up
 ☐ Able to reroll stats with minimum based on class on certain stats
 

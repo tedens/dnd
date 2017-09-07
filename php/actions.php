@@ -198,6 +198,9 @@ switch ($_REQUEST['action']){
         break;
 
     case "setHp":
+        if ($user['hp'] == ""){
+          $user['maxHp'] = $_REQUEST['hp'];
+        }
         $user['hp'] = $user['hp'] + $_REQUEST['hp'];
         break;
     case "restMode":
