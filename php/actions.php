@@ -9,6 +9,14 @@
 if (isset($_REQUEST['user'])){
     $user = json_decode(file_get_contents("../chars/".$_REQUEST['user'].".json"), true);
 
+} else {
+  $users = scandir('../chars/');
+  foreach ($users as $allUsers){
+     if(($allUsers == '.') || ($allUsers == '..')) {
+         $key = array_search($allUsers, $users);
+         unset($users[$key]);
+     }
+  }
 }
 if (isset($_REQUEST['item'])){
     $item = $_REQUEST['item'];
@@ -191,6 +199,14 @@ switch ($_REQUEST['action']){
 
     case "setHp":
         $user['hp'] = $user['hp'] + $_REQUEST['hp'];
+        break;
+    case "restMode":
+        foreach ($users as $u){
+          $newUser = json_decode(file_get_contents("../chars/".$u), true);
+          $newUser['restMode'] = $_REQUEST['restMode'];
+          $newUser = json_encode($newUser);
+          file_put_contents("../chars/" . $u, $newUser);
+        }
         break;
 }
 

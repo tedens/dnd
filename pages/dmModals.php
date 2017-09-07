@@ -233,3 +233,33 @@
 
     </div>
 </div>
+
+<div id="toggleRest" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Sets the mode into/out of rest mode</h4>
+            </div>
+            <div class="modal-body">
+                <p>Rest mode will heal all characters back to full health and allow them to select spells, sell items, etc. Only use this in towns/campfire rests. Obviously not during battle.</p>
+            </div>
+            <form style="margin: 5px 20px;">
+                <label>
+                    Rest Mode Status: <?php  if ($restMode === true){ echo "On"; } else { echo "Off";}?>
+                </label><br />
+                <input type="radio" name="restMode" value="1" <?php if ($restMode === true){ echo "checked"; }?> > On<br>
+                <input type="radio" name="restMode" value="0" <?php if ($restMode === false){ echo "checked"; } ?>> Off<br>
+                <br>
+                <br>
+                <button id="saveRestMode" type="button" class="btn btn-info">Save</button>
+            </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>

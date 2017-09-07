@@ -79,6 +79,22 @@ $(document).ready(function() {
 
     });
 
+    $('#saveRestMode').click(function () {
+        var restMode = $('input[name=restMode]:checked').val(),
+            ajaxUrl = '/php/actions.php?action=restMode&restMode=' + restMode;
+            $.post(ajaxUrl, function(e){
+              if (restMode == 1){
+                var rest = "On";
+              } else {
+                var rest = "Off";
+              }
+                var log = "Set Rest to "+ rest;
+                addToLog(log);
+                dmLog();
+                $('#toggleRest').modal('toggle');
+            })
+        });
+
     function addToLog(data){
         var now = new Date(),
             date = now.format("m/dd/yy H:M:ss");
