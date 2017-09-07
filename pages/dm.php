@@ -107,6 +107,8 @@ foreach ($users as $user){
                     <button id="giveGoldButton" data-toggle="modal" data-target="#giveGold" class="btn btn-warning">Manage Gold</button>
                     <button id="giveExpButton" data-toggle="modal" data-target="#giveExp" class="btn btn-basic">Give Exp</button>
                     <button id="giveItemButton" data-toggle="modal" data-target="#manageInv" class="btn btn-primary">Give Player Items</button>
+                    <button id="giveStatButton" data-toggle="modal" data-target="#giveStat" class="btn btn-primary">Add stats to Player</button>
+                    <button id="giveHpButton" data-toggle="modal" data-target="#modHealth" class="btn btn-primary">Modify a players HP</button>
 
                 </div>
             </div>

@@ -35,6 +35,54 @@
     </div>
 </div>
 
+<div id="giveStat" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add stats to a character</h4>
+            </div>
+            <div class="modal-body">
+                <p>Select which character is receiving a stat addition</p>
+            </div>
+            <form style="margin: 5px 20px;">
+                <label>
+                    Stat Amount:
+                </label>
+                <input id="addStat" name="addStat" required onkeypress="return event.keyCode!=13">
+                <select id="stat">
+                <?php
+                foreach($template->stats as $key => $value){
+                    echo "<option value='$key'>$key</option>";
+                }
+                 ?>
+               </select>
+                <br/>
+                <lable>
+                  Player:
+                </label>
+                <select id="statPlayers" required>
+                    <?php
+                    foreach ($users as $user){
+                        $user = substr($user, 0, -5);
+                        echo "<option value=\"$user\">$user</option>";
+                    };
+                    ?>
+                </select>
+                <br>
+                <br>
+                <button id="saveStat" type="button" class="btn btn-info">Save</button>
+            </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
 <div id="giveExp" class="modal fade" role="dialog">
     <div class="modal-dialog">
 

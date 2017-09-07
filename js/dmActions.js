@@ -31,9 +31,23 @@ $(document).ready(function() {
 
     });
 
+    $('#saveStat').click(function () {
+        var stat = $("#stat").val(),
+            addStat = $("#addStat").val(),
+            user = $('#statPlayers').find(":selected").text(),
+            ajaxUrl = '/php/actions.php?action=updateStat&stat=' + stat + '&user=' + user + '&addStat=' + addStat;
+            $.post(ajaxUrl, function(){
+                var log = "Added " + addStat +" to " + user + "'s " + stat + " stat.";
+                addToLog(log);
+                dmLog();
+                $('#giveStat').modal('toggle');
+            })
+        });
+
     $('#saveHp').click(function () {
+
         var hp = $("#hp").val();
-        $('#playersHpList :selected').each(function() {
+        $('#playerHpList :selected').each(function() {
             var user = $(this).text(),
                 ajaxUrl = '/php/actions.php?action=setHp&hp=' + hp + '&user=' + user;
             $.post(ajaxUrl, function(){

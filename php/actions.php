@@ -185,6 +185,13 @@ switch ($_REQUEST['action']){
         }
 
         break;
+    case "updateStat":
+        $user['stats'][$_REQUEST['stat']] = $user['stats'][$_REQUEST['stat']] + floor($_REQUEST['addStat']);
+        break;
+
+    case "setHp":
+        $user['hp'] = $user['hp'] + $_REQUEST['hp'];
+        break;
 }
 
 if (isset($user)) {

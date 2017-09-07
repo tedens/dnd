@@ -1,6 +1,5 @@
 DND Todo List!
 
-☐ Allow DM to give stat points
 ☐ Show Skills
 ☐ Allow players to select skills in the beginning
 ☐ Show Spells by Level
@@ -11,6 +10,8 @@ DND Todo List!
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ Allow DM to give stat points @done(2017-09-06 23:35)
+  ✔ Allow DM to modify a players HP @done(2017-09-06 23:35)
   ✔ Add item trade system @done(2017-09-05 22:34)
   ✔ Add gold trade system @done(2017-09-05 22:35)
   ✔ Allow DM to give items @done(2017-09-05 22:35)
