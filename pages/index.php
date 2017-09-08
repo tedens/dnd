@@ -38,7 +38,7 @@ $class = $user['class'];
 $gender = $user['sex'];
 $hp = $user['hp'];
 $maxHp = $user['maxHp'];
-
+$restMode = $user['restMode'];
 //get ability modify info
 $am = new abilityModifer();
 
@@ -224,7 +224,7 @@ $lvl = $lf->getLevel($exp);
                                     echo "<td>".$item['stats']." ". $item['stat']."</td>";
                                     echo "<td>".$item['cost']."g</td>";
                                     echo "<td><button class='btn btn-primary itemEquip' data-type='".$item['type']."' data-uname='".$uname."' value='".$item['name']."'>Equip</button></td>";
-                                    echo "<td><button class='btn btn-success sellItem' data-uname='".$uname."' value='".$item['name']."'>Sell</button></td>";
+                                    if ($restMode == 1) {echo "<td><button class='btn btn-success sellItem' data-uname='".$uname."' value='".$item['name']."'>Sell</button></td>";} 
                                     echo "</tr>";
                                 }
                                 ?>

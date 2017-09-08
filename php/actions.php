@@ -207,6 +207,7 @@ switch ($_REQUEST['action']){
         foreach ($users as $u){
           $newUser = json_decode(file_get_contents("../chars/".$u), true);
           $newUser['restMode'] = $_REQUEST['restMode'];
+          $newUser['hp'] = $newUser['maxHp'];
           $newUser = json_encode($newUser);
           file_put_contents("../chars/" . $u, $newUser);
         }

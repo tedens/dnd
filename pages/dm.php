@@ -5,7 +5,7 @@ include '../php/classmap.php';
 $users = scandir('../chars/');
 foreach ($users as $user){
 
-   if(($user == '.') || ($user == '..') || ($user == 'template.json')) {
+   if(($user == '.') || ($user == '..') || ($user == 'template.json') || ($user == 'dm.json')) {
        $key = array_search($user, $users);
        unset($users[$key]);
    }

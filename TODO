@@ -4,13 +4,14 @@ DND Todo List!
 ☐ Allow players to select skills in the beginning
 ☐ Show Spells by Level
 ☐ Allow users to select spells for each level during a rest
-☐ When rest mode active, heal all players to max hp
-✔ Add Max HP to players info @done(2017-09-07 18:59)
+✔ When rest mode active, heal all players to max hp @done(2017-09-07 21:58)
 ☐ Allow quiver addition/delete when arrows are used and picked up
 ☐ Able to reroll stats with minimum based on class on certain stats
+☐ When rest mode active, allow players to sell items
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ Add Max HP to players info @done(2017-09-07 18:59)
   ✔ Fix restMode to not create blank .json file (it deletes it automatically now) @done(2017-09-07 00:22)
   ✔ Allow DM to declare rest mode @done(2017-09-07 00:22)
   ✔ Allow DM to give stat points @done(2017-09-06 23:35)
