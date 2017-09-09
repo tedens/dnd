@@ -114,7 +114,10 @@ switch ($_REQUEST['action']){
     case "reroll":
         foreach ($user['stats'] as $key => $stat){
             $stat = null;
-            $stat = rand(1, 6) + rand(1, 6) + rand(1, 6) + rand(1, 6);
+            $stat = rand(1, 4) + rand(1, 5) + rand(1, 6) + rand(1, 6);
+            if ($stat > 16 || $stat < 8){
+              $stat = rand(1, 4) + rand(1, 4) + rand(1, 4) + rand(1, 4);
+            }
             $user['stats'][$key] = $stat;
         }
         $user['statRolls'] = $user['statRolls'] + 1;
