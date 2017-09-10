@@ -149,6 +149,22 @@ switch ($_REQUEST['action']){
         $data = $logger->addToLog($_REQUEST['log']);
         echo $data;
         break;
+
+    case "quiverAdd":
+        foreach ($user['bag'] as $key => $value){
+            if($value['name'] == $_REQUEST['item']){
+                $user['bag'][$key]['desc'] = $user['bag'][$key]['desc'] + 1;
+            }
+        }
+        break;
+
+    case "quiverDel":
+        foreach ($user['bag'] as $key => $value){
+            if($value['name'] == $_REQUEST['item']){
+                $user['bag'][$key]['desc'] = $user['bag'][$key]['desc'] - 1;
+            }
+        }
+        break;
 }
 
 if (isset($user)) {

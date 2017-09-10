@@ -188,6 +188,18 @@ $lvl = $lf->getLevel($exp);
                                 if ($item) {
                                     echo "<td><button class='btn btn-danger itemUnEquip' data-type='".$key."' data-uname='".$uname."' value='".$item."'>Un-Equip</button></td>";
                                 }
+                                if ($key == "Quiver" && $item){
+                                    foreach ($user['bag'] as $value){
+                                        if($value['name'] == $item){
+                                            $desc = $value['desc'];
+                                        }
+                                    }
+                                    $del = $desc - 1;
+                                    $add = $desc + 1;
+                                    echo "<td><button class='btn btn-primary quiverDel' data-type='".$key."' data-uname='".$uname."' data-amount='".$del."' value='".$item."'>-</button></td>";
+                                    echo "<td>X".$desc."</td>";
+                                    echo "<td><button class='btn btn-success quiverAdd' data-type='".$key."' data-uname='".$uname."' data-amount='".$add."' value='".$item."'>+</button></td>";
+                                }
                                 echo "</tr>";
                             }
                             ?>
