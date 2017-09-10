@@ -5,12 +5,21 @@ include '../php/classmap.php';
 $users = scandir('../chars/');
 foreach ($users as $user){
 
-   if(($user == '.') || ($user == '..') || ($user == 'template.json')) {
+   if(($user == '.') || ($user == '..') || ($user == 'template.json') || ($user == 'dm.json')) {
        $key = array_search($user, $users);
        unset($users[$key]);
    }
-   $template = json_decode(file_get_contents('../chars/template.json'));
 
+
+}
+
+$template = json_decode(file_get_contents('../chars/template.json'));
+$dm = json_decode(file_get_contents('../chars/dm.json'));
+
+if ($dm->restMode == 1){
+  $restMode = true;
+} else {
+  $restMode = false;
 }
 
 ?>
@@ -97,16 +106,19 @@ foreach ($users as $user){
                 <h4>
                     Characters
                 </h4>
-                <div class="col-lg-8 fa-border left">
+                <div class="col-lg-12 fa-border left">
                     <?php
                     foreach ($users as $u){
                         $jsonUser = json_decode(file_get_contents("../chars/$u", true));
                         echo "<ul>".substr($u, 0, -5)." --- Character Name: ".$jsonUser->firstname." ".$jsonUser->lastname." -- Gold: ". $jsonUser->gold."g -- HP: ".$jsonUser->hp."</ul>";
                     }
                     ?>
-                    <button id="giveGoldButton" data-toggle="modal" data-target="#giveGold" class="btn btn-warning">Manage Gold</button><br><br>
-                    <button id="giveExpButton" data-toggle="modal" data-target="#giveExp" class="btn btn-basic">Give Exp</button><br><br>
-                    <button id="giveItemButton" data-toggle="modal" data-target="#manageInv" class="btn btn-primary">Give Player Items</button>
+                    <button id="giveGoldButton" data-toggle="modal" data-target="#giveGold" class="btn btn-warning">Manage Gold</button>
+                    <button id="giveExpButton" data-toggle="modal" data-target="#giveExp" class="btn btn-basic">Give Exp</button>
+                    <button id="giveItemButton" data-toggle="modal" data-target="#manageInv" class="btn btn-primary">Give Items</button>
+                    <button id="giveStatButton" data-toggle="modal" data-target="#giveStat" class="btn btn-primary">Add stats</button>
+                    <button id="giveHpButton" data-toggle="modal" data-target="#modHealth" class="btn btn-primary">Modify HP</button>
+                    <button id="toggleRestButton" data-toggle="modal" data-target="#toggleRest" class="btn btn-primary">Toggle Rest Mode</button>
 
                 </div>
             </div>

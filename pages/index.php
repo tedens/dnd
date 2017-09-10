@@ -7,7 +7,7 @@ $users = scandir('../chars/');
 
 foreach ($users as $Player) {
 
-    if (($Player == '.') || ($Player == '..') || ($Player == 'template.json')) {
+    if (($Player == '.') || ($Player == '..') || ($Player == 'template.json') || ($Player == 'dm.json')) {
         $key = array_search($Player, $users);
         unset($users[$key]);
     }
@@ -37,8 +37,8 @@ $race = $user['race'];
 $class = $user['class'];
 $gender = $user['sex'];
 $hp = $user['hp'];
-
-
+$maxHp = $user['maxHp'];
+$restMode = $user['restMode'];
 //get ability modify info
 $am = new abilityModifer();
 
@@ -85,6 +85,10 @@ $lvl = $lf->getLevel($exp);
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
 
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" />
+
+
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -116,6 +120,8 @@ $lvl = $lf->getLevel($exp);
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
+              <button type="button" class="btn btn-success" style="margin-right: 15px;margin-top: 10px;" data-toggle="modal" data-target="#tradeItem">Trade Items</button>
+              <button type="button" class="btn btn-warning" style="margin-right: 15px;margin-top: 10px;" data-toggle="modal" data-target="#tradeGold">Trade Gold</button>
 
 
             </ul>
@@ -125,9 +131,10 @@ $lvl = $lf->getLevel($exp);
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
+                          <a href="#" data-toggle="modal" data-target="#newUser"><i class="fa fa-plus-circle fa-fw"></i>New User</a>
                             <?php
                             foreach ($users as $u) {
-                                echo '<a href="index.php?'.substr($u, 0, -5).'"><i class="fa fa-dashboard fa-fw"></i>'. substr($u, 0, -5) .'</a>';
+                                echo '<a href="index.php?'.substr($u, 0, -5).'"><i class="fa fa-user fa-fw"></i>'. substr($u, 0, -5) .'</a>';
                             }
                             ?>
                         </li>
@@ -159,7 +166,8 @@ $lvl = $lf->getLevel($exp);
                         echo "<ul>Gender: $gender</ul>";
                         echo "<ul>Age: $age</ul>";
                         echo "<ul>Alignment: $align</ul>";
-                        echo "<ul>HP: $hp</ul>";
+                        echo "<ul>Current HP: $hp</ul>";
+                        echo "<ul>Max HP: $maxHp</ul>";
 
                         echo "<hr>";
                         foreach ($user['stats'] as $key => $st){
@@ -228,7 +236,7 @@ $lvl = $lf->getLevel($exp);
                                     echo "<td>".$item['stats']." ". $item['stat']."</td>";
                                     echo "<td>".$item['cost']."g</td>";
                                     echo "<td><button class='btn btn-primary itemEquip' data-type='".$item['type']."' data-uname='".$uname."' value='".$item['name']."'>Equip</button></td>";
-                                    echo "<td><button class='btn btn-success sellItem' data-uname='".$uname."' value='".$item['name']."'>Sell</button></td>";
+                                    if ($restMode == 1) {echo "<td><button class='btn btn-success sellItem' data-uname='".$uname."' value='".$item['name']."'>Sell</button></td>";} 
                                     echo "</tr>";
                                 }
                                 ?>
@@ -271,7 +279,7 @@ $lvl = $lf->getLevel($exp);
     <script src="../js/dataFormat.js"></script>
 
     <script src="../js/playerActions.js"></script>
-<?php include 'playerModals.html'; ?>
+<?php include 'playerModals.php'; ?>
 </body>
 
 </html>

@@ -9,6 +9,14 @@
 if (isset($_REQUEST['user'])){
     $user = json_decode(file_get_contents("../chars/".$_REQUEST['user'].".json"), true);
 
+} else {
+  $users = scandir('../chars/');
+  foreach ($users as $allUsers){
+     if(($allUsers == '.') || ($allUsers == '..')) {
+         $key = array_search($allUsers, $users);
+         unset($users[$key]);
+     }
+  }
 }
 if (isset($_REQUEST['item'])){
     $item = $_REQUEST['item'];
@@ -56,10 +64,12 @@ switch ($_REQUEST['action']){
                 }
             }
         }
+        if (isset($stat['val'])){
         $user['inv'][$type] = "";
         if($stat['val'] !== 'other'){
           $user['stats'][$stat['val']] = $user['stats'][$stat['val']] - intval($stat['int']);
         }
+      }
         break;
 
     case "addItem":
@@ -104,7 +114,10 @@ switch ($_REQUEST['action']){
     case "reroll":
         foreach ($user['stats'] as $key => $stat){
             $stat = null;
-            $stat = rand(1, 6) + rand(1, 6) + rand(1, 6) + rand(1, 6);
+            $stat = rand(1, 4) + rand(1, 5) + rand(1, 6) + rand(1, 6);
+            if ($stat > 16 || $stat < 8){
+              $stat = rand(1, 4) + rand(1, 4) + rand(1, 4) + rand(1, 4);
+            }
             $user['stats'][$key] = $stat;
         }
         $user['statRolls'] = $user['statRolls'] + 1;
@@ -143,6 +156,17 @@ switch ($_REQUEST['action']){
         $user['statRolls'] = 5;
         break;
 
+    case "tradeGold":
+        $player = $_REQUEST['player'];
+        if (isset($_REQUEST['gold']) || isset($player)){
+          $playerConf = json_decode(file_get_contents("../chars/".$player.".json"), true);
+          $user['gold'] = $user['gold'] - abs($_REQUEST['gold']);
+          $playerConf['gold'] = $playerConf['gold'] + abs($_REQUEST['gold']);
+          $newPlayer = json_encode($playerConf);
+          file_put_contents("../chars/" . $player . ".json", $newPlayer);
+        }
+        break;
+
     case "dmLog":
         include 'dmLogging.php';
         $logger = new dmLogging();
@@ -163,6 +187,46 @@ switch ($_REQUEST['action']){
             if($value['name'] == $_REQUEST['item']){
                 $user['bag'][$key]['desc'] = $user['bag'][$key]['desc'] - 1;
             }
+
+    case "tradeItem":
+    $player = $_REQUEST['player'];
+
+        if (isset($item) || isset($player)){
+          $playerConf = json_decode(file_get_contents("../chars/".$player.".json"), true);
+          foreach ($user['bag'] as $key => $value){
+              if($value['name'] == $item){
+                  $itemId = $key;
+              }
+          }
+          $itemToTrade = $user['bag'][$itemId];
+          if (isset($itemToTrade)){
+            unset($user['bag'][$itemId]);
+            $playerConf['bag'][] = $itemToTrade;
+            $newPlayer = json_encode($playerConf);
+            file_put_contents("../chars/" . $player . ".json", $newPlayer);
+          }
+        } else {
+          echo "Bad trade";
+        }
+
+        break;
+    case "updateStat":
+        $user['stats'][$_REQUEST['stat']] = $user['stats'][$_REQUEST['stat']] + floor($_REQUEST['addStat']);
+        break;
+
+    case "setHp":
+        if ($user['hp'] == ""){
+          $user['maxHp'] = $_REQUEST['hp'];
+        }
+        $user['hp'] = $user['hp'] + $_REQUEST['hp'];
+        break;
+    case "restMode":
+        foreach ($users as $u){
+          $newUser = json_decode(file_get_contents("../chars/".$u), true);
+          $newUser['restMode'] = $_REQUEST['restMode'];
+          $newUser['hp'] = $newUser['maxHp'];
+          $newUser = json_encode($newUser);
+          file_put_contents("../chars/" . $u, $newUser);
         }
         break;
 }

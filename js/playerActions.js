@@ -113,12 +113,41 @@ $(document).ready(function() {
         });
     });
 
+    $('#tradeGoldButton').click(function(){
+        var uname = $(this).data('uname'),
+            usersGold = $(this).data('origgold'),
+            gold = $("#tradeGoldAmount").val(),
+            playerToTrade = $("#goldTradeList").find(":selected").text(),
+            ajaxUrl = '/php/actions.php?action=tradeGold&user=' + uname + '&gold='+ gold + '&player=' + playerToTrade;
+            if (gold > usersGold){
+              alert("You do not have that much gold.");
+            } else {
+              $.post(ajaxUrl, function () {
+                var log = uname + " gave " + gold + "g to " + playerToTrade;
+                addToLog(log);
+                location.reload();
+              });
+            }
+    });
+
     $('#saveUser').click(function(){
-        var uname = $("#username").val(),
-            ajaxUrl = '/php/actions.php?action=newUser&user=' + uname;
-        $.post(ajaxUrl, function () {
-            location.reload();
-        });
+        var uname = $("#username").val();
+          window.location.replace("index.php?" + uname);
+    });
+
+    $('#tradeItemButton').click(function(){
+        var uname = $(this).data('uname'),
+            item = $("#itemToTrade").find(":selected").text(),
+            playerToTrade = $("#tradeList").find(":selected").text(),
+            ajaxUrl = '/php/actions.php?action=unequipItem&user=' + uname + '&item=' + item;
+            ajaxUrl2 = '/php/actions.php?action=tradeItem&user=' + uname + '&item='+ item + '&player=' + playerToTrade;
+            $.post(ajaxUrl, function (e) {
+                  $.post(ajaxUrl2, function (e) {
+                      var log = uname + " traded " + item + " to " + playerToTrade;
+                      addToLog(log);
+                      location.reload();
+                  });
+            });
     });
 
     $('.quiverAdd').click(function(){
@@ -154,9 +183,7 @@ $(document).ready(function() {
     function addToLog(data){
         var now = new Date(),
             date = now.format("m/dd/yy H:M:ss");
-        console.log(data);
         var newData = data.replace (/^/, date + ' - ');
-        console.log(newData);
         var ajaxUrl = '/php/actions.php?action=dmLog&log=' + newData;
         $.post(ajaxUrl, function(){
             console.log("Action Logged -- " + newData);

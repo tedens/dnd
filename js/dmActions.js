@@ -31,9 +31,23 @@ $(document).ready(function() {
 
     });
 
+    $('#saveStat').click(function () {
+        var stat = $("#stat").val(),
+            addStat = $("#addStat").val(),
+            user = $('#statPlayers').find(":selected").text(),
+            ajaxUrl = '/php/actions.php?action=updateStat&stat=' + stat + '&user=' + user + '&addStat=' + addStat;
+            $.post(ajaxUrl, function(){
+                var log = "Added " + addStat +" to " + user + "'s " + stat + " stat.";
+                addToLog(log);
+                dmLog();
+                $('#giveStat').modal('toggle');
+            })
+        });
+
     $('#saveHp').click(function () {
+
         var hp = $("#hp").val();
-        $('#playersHpList :selected').each(function() {
+        $('#playerHpList :selected').each(function() {
             var user = $(this).text(),
                 ajaxUrl = '/php/actions.php?action=setHp&hp=' + hp + '&user=' + user;
             $.post(ajaxUrl, function(){
@@ -65,12 +79,26 @@ $(document).ready(function() {
 
     });
 
+    $('#saveRestMode').click(function () {
+        var restMode = $('input[name=restMode]:checked').val(),
+            ajaxUrl = '/php/actions.php?action=restMode&restMode=' + restMode;
+            $.post(ajaxUrl, function(e){
+              if (restMode == 1){
+                var rest = "On";
+              } else {
+                var rest = "Off";
+              }
+                var log = "Set Rest to "+ rest;
+                addToLog(log);
+                dmLog();
+                $('#toggleRest').modal('toggle');
+            })
+        });
+
     function addToLog(data){
         var now = new Date(),
             date = now.format("m/dd/yy H:M:ss");
-        console.log(data);
         var newData = data.replace (/^/, date + ' - ');
-        console.log(newData);
         var ajaxUrl = '/php/actions.php?action=dmLog&log=' + newData;
         $.post(ajaxUrl, function(data){
             dmLog();
@@ -82,7 +110,7 @@ $(document).ready(function() {
         var file = '../data/dm-log.txt';
         jQuery.get(file, function(data) {
             //process text file line by line
-            $('.dm-log').html(data.replace('n',''));
+            $('.dm-log').html(data);
         });
     }
 
@@ -94,4 +122,3 @@ $(document).ready(function() {
 
 
 });
-
