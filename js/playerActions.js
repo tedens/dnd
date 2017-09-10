@@ -47,7 +47,7 @@ $(document).ready(function() {
             item = $(this).val(),
             log = user + " sold their " + item;
         addToLog(log);
-        sellItem(user, item)
+        sellItem(user, item);
         location.reload();
 
     });
@@ -150,6 +150,31 @@ $(document).ready(function() {
             });
     });
 
+    $('.quiverAdd').click(function(){
+        var uname = $(this).data('uname'),
+            item = $(this).val(),
+            amount = $(this).data('amount'),
+            ajaxUrl = '/php/actions.php?action=quiverAdd&user=' + uname + '&item=' + item;
+        $.post(ajaxUrl, function () {
+            var log = uname + " gained an arrow. They have " + amount + " left.";
+            addToLog(log);
+            location.reload();
+        });
+
+    });
+    $('.quiverDel').click(function(){
+        var uname = $(this).data('uname'),
+            item = $(this).val(),
+            amount = $(this).data('amount'),
+            ajaxUrl = '/php/actions.php?action=quiverDel&user=' + uname + '&item=' + item;
+        $.post(ajaxUrl, function () {
+            var log = uname + " used an arrow. They have " + amount + " left.";
+            addToLog(log);
+            location.reload();
+        });
+
+    });
+
     function sellItem(user, item){
         var ajaxUrl = '/php/actions.php?action=sellItem&user=' + user + '&item=' + item;
         post(ajaxUrl, 1);
@@ -164,5 +189,6 @@ $(document).ready(function() {
             console.log("Action Logged -- " + newData);
         });
     }
+
 
 });
