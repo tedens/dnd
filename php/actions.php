@@ -114,10 +114,7 @@ switch ($_REQUEST['action']){
     case "reroll":
         foreach ($user['stats'] as $key => $stat){
             $stat = null;
-            $stat = rand(1, 4) + rand(1, 5) + rand(1, 6) + rand(1, 6);
-            if ($stat > 16 || $stat < 8){
-              $stat = rand(1, 4) + rand(1, 4) + rand(1, 4) + rand(1, 4);
-            }
+            $stat = rand(2, 4) + rand(2, 4) + rand(2, 4) + rand(2, 4);
             $user['stats'][$key] = $stat;
         }
         $user['statRolls'] = $user['statRolls'] + 1;
@@ -183,10 +180,12 @@ switch ($_REQUEST['action']){
         break;
 
     case "quiverDel":
-        foreach ($user['bag'] as $key => $value){
-            if($value['name'] == $_REQUEST['item']){
+        foreach ($user['bag'] as $key => $value) {
+            if ($value['name'] == $_REQUEST['item']) {
                 $user['bag'][$key]['desc'] = $user['bag'][$key]['desc'] - 1;
             }
+        }
+        break;
 
     case "tradeItem":
     $player = $_REQUEST['player'];
