@@ -60,7 +60,7 @@
                  ?>
                </select>
                 <br/>
-                <lable>
+                <label>
                   Player:
                 </label>
                 <select id="statPlayers" required>
