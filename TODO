@@ -4,12 +4,12 @@ DND Todo List!
 ☐ Allow players to select skills in the beginning
 ☐ Show Spells by Level
 ☐ Allow users to select spells for each level during a rest
-☐ Allow quiver addition/delete when arrows are used and picked up
-☐ Able to reroll stats with minimum based on class on certain stats
-☐ Make DM page show character info better
+☐ Make items equiped area look like a real person
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ Allow quiver addition/delete when arrows are used and picked up @done(2017-09-10 20:49)☐ Make DM page show character info better
+  ✔ Set Minimums/Max on rerolled stats. @done(2017-09-10 21:58)
   ✔ When rest mode active, heal all players to max hp @done(2017-09-07 21:58)
   ✔ When rest mode active, allow players to sell items @done(2017-09-07 21:59)
   ✔ Add Max HP to players info @done(2017-09-07 18:59)

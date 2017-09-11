@@ -151,6 +151,6 @@ if ($dm->restMode == 1){
 <script src="../dist/js/sb-admin-2.js"></script>
 <script src="../js/dataFormat.js"></script>
 <script src="../js/dmActions.js"></script>
-<?php include 'dmModals.php'; ?>
+<?php include '../extra/dmModals.php'; ?>
 </body>
 </html>

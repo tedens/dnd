@@ -1,17 +1,8 @@
 <?php
 //classmap without using composer autoload
 include '../php/classmap.php';
+include_once '../extra/nav.php';
 
-// get list of all users
-$users = scandir('../chars/');
-
-foreach ($users as $Player) {
-
-    if (($Player == '.') || ($Player == '..') || ($Player == 'template.json') || ($Player == 'dm.json')) {
-        $key = array_search($Player, $users);
-        unset($users[$key]);
-    }
-}
 
 //get current user to view
 $uname = $_SERVER['QUERY_STRING'];
@@ -25,8 +16,6 @@ if (file_exists('../chars/'.$uname.'.json')) {
         $user = json_decode(file_get_contents("../chars/$uname.json"), true);
     }
 }
-//get user json file since not using a db and convert to php array
-
 //some one off variables
 $exp = $user['exp'];
 $gold = $user['gold'];
@@ -106,44 +95,6 @@ $lvl = $lf->getLevel($exp);
 
     <div id="wrapper">
 
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.php">510 - DND Dashboard</a>
-            </div>
-            <!-- /.navbar-header -->
-
-            <ul class="nav navbar-top-links navbar-right">
-              <button type="button" class="btn btn-success" style="margin-right: 15px;margin-top: 10px;" data-toggle="modal" data-target="#tradeItem">Trade Items</button>
-              <button type="button" class="btn btn-warning" style="margin-right: 15px;margin-top: 10px;" data-toggle="modal" data-target="#tradeGold">Trade Gold</button>
-
-
-            </ul>
-            <!-- /.navbar-top-links -->
-
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li>
-                          <a href="#" data-toggle="modal" data-target="#newUser"><i class="fa fa-plus-circle fa-fw"></i>New User</a>
-                            <?php
-                            foreach ($users as $u) {
-                                echo '<a href="index.php?'.substr($u, 0, -5).'"><i class="fa fa-user fa-fw"></i>'. substr($u, 0, -5) .'</a>';
-                            }
-                            ?>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
-        </nav>
 
         <div id="page-wrapper">
             <div class="row">
@@ -236,7 +187,7 @@ $lvl = $lf->getLevel($exp);
                                     echo "<td>".$item['stats']." ". $item['stat']."</td>";
                                     echo "<td>".$item['cost']."g</td>";
                                     echo "<td><button class='btn btn-primary itemEquip' data-type='".$item['type']."' data-uname='".$uname."' value='".$item['name']."'>Equip</button></td>";
-                                    if ($restMode == 1) {echo "<td><button class='btn btn-success sellItem' data-uname='".$uname."' value='".$item['name']."'>Sell</button></td>";} 
+                                    if ($restMode == 1) {echo "<td><button class='btn btn-success sellItem' data-uname='".$uname."' value='".$item['name']."'>Sell</button></td>";}
                                     echo "</tr>";
                                 }
                                 ?>
@@ -279,7 +230,7 @@ $lvl = $lf->getLevel($exp);
     <script src="../js/dataFormat.js"></script>
 
     <script src="../js/playerActions.js"></script>
-<?php include 'playerModals.php'; ?>
+    <?php include_once '../extra/playerModals.php'; ?>
 </body>
 
 </html>

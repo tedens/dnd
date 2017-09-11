@@ -66,11 +66,11 @@ $(document).ready(function() {
             stats = $("#statMod").val(),
             cost = $("#cost").val(),
             desc = $("#desc").val(),
-            stat = $("#stat").val(),
+            stat = $("#statName").find(":selected").text(),
             user = $("#playerList").find(":selected").text(),
             mod = $("#mod").find(":selected").val(),
             ajaxUrl = '/php/actions.php?action=addItem&itemType='+ itemType +'&itemName=' + itemName + '&statMod=' + mod + stats + '&stat='+ stat + '&desc=' + desc + '&cost=' + cost + '&user=' + user;
-        $.post(ajaxUrl, function(){
+            $.post(ajaxUrl, function(){
             var log = "Added " + itemName +" with a " + mod + stats + " " + stat+ " to " + user + "'s inventory.";
             addToLog(log);
             dmLog();

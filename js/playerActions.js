@@ -114,6 +114,7 @@ $(document).ready(function() {
     });
 
     $('#tradeGoldButton').click(function(){
+      console.log("test");
         var uname = $(this).data('uname'),
             usersGold = $(this).data('origgold'),
             gold = $("#tradeGoldAmount").val(),
