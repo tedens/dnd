@@ -20,13 +20,15 @@ $(document).ready(function() {
     });
 
     $('#satisfiedButton').click(function () {
-        var uname = $(this).data('uname'),
-            ajaxUrl = '/php/actions.php?action=satisfy&user=' + uname;
-        $.post(ajaxUrl, function () {
-            var log = uname + " has rerolled their stats.";
-            addToLog(log);
-            location.reload();
-        });
+        if (confirm("Are you sure?") == true) {
+            var uname = $(this).data('uname'),
+                ajaxUrl = '/php/actions.php?action=satisfy&user=' + uname;
+            $.post(ajaxUrl, function () {
+                var log = uname + " has rerolled their stats.";
+                addToLog(log);
+                location.reload();
+            });
+        }
     });
     $('.itemEquip').click(function(){
         var uname = $(this).data('uname'),
