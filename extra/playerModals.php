@@ -177,6 +177,7 @@
                     <option>Half-Orc</option>
                     <option>Hafling</option>
                     <option>Human</option>
+                    <option>Lizard-Folk</option>
                     <option>Tiefling</option>
                 </select>
 
