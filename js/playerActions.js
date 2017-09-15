@@ -10,13 +10,15 @@ $(document).ready(function() {
     }
     //rerolling user stats
     $('#reroll').click(function () {
-        var uname = $(this).data('uname'),
-            ajaxUrl = '/php/actions.php?action=reroll&user=' + uname;
-        $.post(ajaxUrl, function () {
-            var log = uname + " has rerolled their stats.";
-            addToLog(log);
-            location.reload();
-        });
+        if (confirm("Are you sure?") == true) {
+            var uname = $(this).data('uname'),
+                ajaxUrl = '/php/actions.php?action=reroll&user=' + uname;
+            $.post(ajaxUrl, function () {
+                var log = uname + " has rerolled their stats.";
+                addToLog(log);
+                location.reload();
+            });
+        }
     });
 
     $('#satisfiedButton').click(function () {
@@ -45,13 +47,14 @@ $(document).ready(function() {
         });
     });
     $('.sellItem').click(function(){
-        var user = $(this).data('uname'),
-            item = $(this).val(),
-            log = user + " sold their " + item;
-        addToLog(log);
-        sellItem(user, item);
-        location.reload();
-
+        if (confirm("Are you sure?") == true) {
+            var user = $(this).data('uname'),
+                item = $(this).val(),
+                log = user + " sold their " + item;
+            addToLog(log);
+            sellItem(user, item);
+            location.reload();
+        }
     });
 
     $('.itemUnEquip').click(function(){
@@ -116,21 +119,22 @@ $(document).ready(function() {
     });
 
     $('#tradeGoldButton').click(function(){
-      console.log("test");
-        var uname = $(this).data('uname'),
-            usersGold = $(this).data('origgold'),
-            gold = $("#tradeGoldAmount").val(),
-            playerToTrade = $("#goldTradeList").find(":selected").text(),
-            ajaxUrl = '/php/actions.php?action=tradeGold&user=' + uname + '&gold='+ gold + '&player=' + playerToTrade;
-            if (gold > usersGold){
-              alert("You do not have that much gold.");
+        if (confirm("Are you sure?") == true) {
+            var uname = $(this).data('uname'),
+                usersGold = $(this).data('origgold'),
+                gold = $("#tradeGoldAmount").val(),
+                playerToTrade = $("#goldTradeList").find(":selected").text(),
+                ajaxUrl = '/php/actions.php?action=tradeGold&user=' + uname + '&gold=' + gold + '&player=' + playerToTrade;
+            if (gold > usersGold) {
+                alert("You do not have that much gold.");
             } else {
-              $.post(ajaxUrl, function () {
-                var log = uname + " gave " + gold + "g to " + playerToTrade;
-                addToLog(log);
-                location.reload();
-              });
+                $.post(ajaxUrl, function () {
+                    var log = uname + " gave " + gold + "g to " + playerToTrade;
+                    addToLog(log);
+                    location.reload();
+                });
             }
+        }
     });
 
     $('#saveUser').click(function(){
@@ -139,18 +143,20 @@ $(document).ready(function() {
     });
 
     $('#tradeItemButton').click(function(){
-        var uname = $(this).data('uname'),
-            item = $("#itemToTrade").find(":selected").text(),
-            playerToTrade = $("#tradeList").find(":selected").text(),
-            ajaxUrl = '/php/actions.php?action=unequipItem&user=' + uname + '&item=' + item;
-            ajaxUrl2 = '/php/actions.php?action=tradeItem&user=' + uname + '&item='+ item + '&player=' + playerToTrade;
+        if (confirm("Are you sure?") == true) {
+            var uname = $(this).data('uname'),
+                item = $("#itemToTrade").find(":selected").text(),
+                playerToTrade = $("#tradeList").find(":selected").text(),
+                ajaxUrl = '/php/actions.php?action=unequipItem&user=' + uname + '&item=' + item;
+            ajaxUrl2 = '/php/actions.php?action=tradeItem&user=' + uname + '&item=' + item + '&player=' + playerToTrade;
             $.post(ajaxUrl, function (e) {
-                  $.post(ajaxUrl2, function (e) {
-                      var log = uname + " traded " + item + " to " + playerToTrade;
-                      addToLog(log);
-                      location.reload();
-                  });
+                $.post(ajaxUrl2, function (e) {
+                    var log = uname + " traded " + item + " to " + playerToTrade;
+                    addToLog(log);
+                    location.reload();
+                });
             });
+        }
     });
 
     $('.quiverAdd').click(function(){

@@ -67,8 +67,6 @@ switch ($_SERVER['QUERY_STRING']){
       <!-- /.navbar-header -->
 
       <ul class="nav navbar-top-links navbar-right">
-        <button type="button" class="btn btn-success" style="margin-right: 15px;margin-top: 10px;" data-toggle="modal" data-target="#tradeItem">Trade Items</button>
-        <button type="button" class="btn btn-warning" style="margin-right: 15px;margin-top: 10px;" data-toggle="modal" data-target="#tradeGold">Trade Gold</button>
 
 
       </ul>
@@ -136,6 +134,5 @@ switch ($_SERVER['QUERY_STRING']){
 <script src="../dist/js/sb-admin-2.js"></script>
 <script src="../js/dataFormat.js"></script>
 <script src="../js/dmActions.js"></script>
-<?php include 'dmModals.php'; ?>
 </body>
 </html>

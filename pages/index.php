@@ -47,7 +47,9 @@ if (isset($_POST['action'])) {
 
 //get level based on exp amount.
 $lf = new levelFinder();
-$lvl = $lf->getLevel($exp);
+$lvlInfo = $lf->getLevel($exp);
+$lvl = $lvlInfo['lvl'];
+$prof = $lvlInfo['prof'];
 
 
 ?>
@@ -128,7 +130,7 @@ $lvl = $lf->getLevel($exp);
                         <hr>
                         <?php
                         echo "<ul>Exp: $exp</ul>";
-                        echo "<ul>Level: $lvl</ul>";
+                        echo "<ul>Level & Proficiency: $lvl ($prof)</ul>";
                         echo "<ul>Gold: ".$gold."g</ul>";
                         ?>
                     </div>
@@ -202,7 +204,7 @@ $lvl = $lf->getLevel($exp);
                         if($align == ''){ echo '<button type="button" id="setAlignButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setAlign" class="btn btn-primary">Set Alignment</button><br><br>';}
                          if($fullName == ' '){ echo '<button type="button" id="setNameButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setName" class="btn btn-primary">Set Name</button><br><br>';}
                         if($age == ''){ echo '<button type="button" id="setAgeButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setAge" class="btn btn-primary">Set Age</button><br><br>';}
-                        if($race == ''){ echo '<button type="button" id="setRaceButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setRace" class="btn btn-primary">Set Race</button><br><br>';}
+                        if($race == '' && $user['statRolls'] == 5){ echo '<button type="button" id="setRaceButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setRace" class="btn btn-primary">Set Race</button><br><br>';}
                         if($class == ''){ echo '<button type="button" id="setClassButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setClass" class="btn btn-primary">Set Class</button><br><br>';}
                         if($gender == ''){ echo '<button type="button" id="setGenderButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setGender" class="btn btn-primary">Set Gender</button><br><br>';}
                         ?>
