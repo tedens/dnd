@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    playerLog();
     function post(ajaxUrl, willAlert){
         $.post(ajaxUrl, function (data) {
             if(willAlert >= 1) {
