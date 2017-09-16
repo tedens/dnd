@@ -225,7 +225,7 @@ $prof = $lvlInfo['prof'];
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-8">
                     <h4>Player Log</h4>
                     <textarea rows="20" readonly class="form-control player-log"></textarea>
                 </div>

@@ -273,7 +273,9 @@ switch ($_REQUEST['action']){
         $type = $_REQUEST['type'];
         $amount = $_REQUEST['amount'];
         if ($type == 'body'){
-
+            $body = array('Head','Right Leg','Full Body','Right Hand','Right Arm','Left Foot','Right Foot','Left Hand','Left Arm','Stomach','Left Leg','Chest');
+            $roll = mt_rand(1,12);
+            $roll = $body[$roll];
         } else {
             $maxResult = $type * $amount;
             $roll = mt_rand($amount, $maxResult);
