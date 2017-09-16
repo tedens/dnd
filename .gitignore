@@ -5,3 +5,4 @@ bower_components
 .remote-sync.json
 /data/dm-log.txt
 .idea
+/data/player-log.txt
