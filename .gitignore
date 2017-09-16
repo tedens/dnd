@@ -4,5 +4,5 @@ bower_components
 !/chars/template.json
 .remote-sync.json
 /data/dm-log.txt
-.idea
+.idea/*
 /data/player-log.txt
