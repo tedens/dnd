@@ -23,13 +23,16 @@ foreach ($users as $Player) {
         <a class="navbar-brand" href="index.php">510 - DND Dashboard</a>
     </div>
     <!-- /.navbar-header -->
+    <?php
 
-    <ul class="nav navbar-top-links navbar-right">
-      <button type="button" class="btn btn-success" style="margin-right: 15px;margin-top: 10px;" data-toggle="modal" data-target="#tradeItem">Trade Items</button>
-      <button type="button" class="btn btn-warning" style="margin-right: 15px;margin-top: 10px;" data-toggle="modal" data-target="#tradeGold">Trade Gold</button>
-
-
-    </ul>
+    if (strpos($_SERVER['REQUEST_URI'], 'index.php')) {
+        echo '<ul class="nav navbar-top-links navbar-right">
+                <button type="button" class="btn btn-success" style="margin-right: 15px;margin-top: 10px;" data-toggle="modal" data-target="#tradeItem">Trade Items</button>
+                <button type="button" class="btn btn-warning" style="margin-right: 15px;margin-top: 10px;" data-toggle="modal" data-target="#tradeGold">Trade Gold</button>
+                </ul>
+              ';
+    }
+    ?>
     <!-- /.navbar-top-links -->
 
     <div class="navbar-default sidebar" role="navigation">
@@ -37,7 +40,7 @@ foreach ($users as $Player) {
             <ul class="nav" id="side-menu">
                 <li>
                   <a href="#" data-toggle="modal" data-target="#newUser"><i class="fa fa-plus-circle fa-fw"></i>New User</a>
-                    <a href="/pages/dm.php">DM Page</a>
+                    <a href="/pages/dm.php"><i class="fa fa-optin-monster fa-fw"></i> DM Page</a>
                     <?php
                     foreach ($users as $u) {
                         echo '<a href="index.php?'.substr($u, 0, -5).'"><i class="fa fa-user fa-fw"></i>'. substr($u, 0, -5) .'</a>';
