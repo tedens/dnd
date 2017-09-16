@@ -165,6 +165,7 @@ switch ($_REQUEST['action']){
             $user['stats']['Wisdom'] = $user['stats']['Wisdom'] + 1;
             $user['stats']['Charisma'] = $user['stats']['Charisma'] + 1;
         } elseif ($race == 'Lizard-Folk') {
+            $user['stats']['Constitution'] = $user['stats']['Constitution'] + 2;
 
         } elseif ($race == 'Tiefling') {
             $user['stats']['Intelligence'] = $user['stats']['Intelligence'] + 1;
@@ -200,6 +201,13 @@ switch ($_REQUEST['action']){
         include 'dmLogging.php';
         $logger = new dmLogging();
         $data = $logger->addToLog($_REQUEST['log']);
+        echo $data;
+        break;
+
+    case "playerLog":
+        include 'dmLogging.php';
+        $logger = new dmLogging();
+        $data = $logger->addToPlayerLog($_REQUEST['log']);
         echo $data;
         break;
 
@@ -259,6 +267,18 @@ switch ($_REQUEST['action']){
           $newUser = json_encode($newUser);
           file_put_contents("../chars/" . $u, $newUser);
         }
+        break;
+
+    case "rollDice":
+        $type = $_REQUEST['type'];
+        $amount = $_REQUEST['amount'];
+        if ($type == 'body'){
+
+        } else {
+            $maxResult = $type * $amount;
+            $roll = mt_rand($amount, $maxResult);
+        }
+        echo $roll;
         break;
 }
 

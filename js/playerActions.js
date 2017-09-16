@@ -184,6 +184,24 @@ $(document).ready(function() {
 
     });
 
+    $('#saveRollDice').click(function(){
+        var uname = $(this).data('uname'),
+            dtype = $("#diceType").find(":selected").val(),
+            amount = $("#rollAmount").val(),
+            memo = $("#rollMemo").val(),
+            ajaxUrl = '/php/actions.php?action=rollDice&user=' + uname + '&type='+ $.trim(dtype) + '&amount=' + amount + '&memo' + memo;
+        if (amount == '' || memo == '' ){
+            alert("Please be sure you set how many dice to roll and why you are rolling for other players and the dm to know.")
+        } else {
+            $.post(ajaxUrl, function (e) {
+                $("#diceResult").text('Dice roll result: ' + e);
+                var log = uname + " rolled a " + dtype + " sided dice " + amount + " times for " + memo + ". The result was: " + e;
+                addToLog(log);
+                addToPlayerLog(log);
+            });
+        }
+    });
+
     function sellItem(user, item){
         var ajaxUrl = '/php/actions.php?action=sellItem&user=' + user + '&item=' + item;
         post(ajaxUrl, 1);
@@ -198,6 +216,31 @@ $(document).ready(function() {
             console.log("Action Logged -- " + newData);
         });
     }
+
+    function addToPlayerLog(data){
+        var now = new Date(),
+            date = now.format("m/dd/yy H:M:ss");
+        var newData = data.replace (/^/, date + ' - ');
+        var ajaxUrl = '/php/actions.php?action=playerLog&log=' + newData;
+        $.post(ajaxUrl, function(){
+            console.log("Action Logged -- " + newData);
+        });
+    }
+
+    function playerLog(){
+        $('.player-log').html("");
+        var file = '../data/player-log.txt';
+        jQuery.get(file, function(data) {
+            //process text file line by line
+            $('.player-log').html(data);
+        });
+    }
+
+    // for when users update the log
+
+    $(function () {
+        setInterval(playerLog, 5000);
+    });
 
 
 });

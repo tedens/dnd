@@ -33,6 +33,56 @@
 </div>
 
 <!-- Modal -->
+<div id="rollDice" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Roll Dice</h4>
+            </div>
+            <div class="modal-body">
+                <p>What you roll will be logged for other players and the DM to see.</p>
+            </div>
+            <form style="margin: 5px 20px;">
+                <span id="diceResult">
+
+                </span><br>
+                <label>
+                    Type of dice:
+                </label>
+                <select id="diceType" required>
+                    <option value="20">D20</option>
+                    <option value="12">D12</option>
+                    <option value="10">D10</option>
+                    <option value="8">D8</option>
+                    <option value="6">D6</option>
+                    <option value="4">D4</option>
+                    <option value="body">Body Dice</option>
+                </select>
+                <br>
+                <label>
+                    How many times?
+                </label>
+                <input id="rollAmount" name="rollAmount" required onkeypress="return event.keyCode!=13" />
+                <br>
+                <label>
+                    What is the roll for?
+                </label>
+                <input id="rollMemo" name="rollMemo" required onkeypress="return event.keyCode!=13" />
+                <br>
+                <button id="saveRollDice" type="button" class="btn btn-info" data-uname="<?php echo $uname; ?>">Save</button>
+            </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal -->
 <div id="setAge" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
@@ -76,10 +126,13 @@
             </div>
             <form style="margin: 5px 20px;">
                 <label>
-                    Age:
+                    Gender:
                 </label>
-                <input id="gender" name="gender" required onkeypress="return event.keyCode!=13"/>
-                <br>
+                <select id="gender" required>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>                <br>
                 <button id="saveGender" type="button" class="btn btn-info" data-uname="<?php echo $uname; ?>">Save</button>
             </form>
             <div class="modal-footer">

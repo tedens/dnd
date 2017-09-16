@@ -17,7 +17,15 @@ class dmLogging
         $data = "$log\n";
         $data .= file_get_contents('../data/dm-log.txt');
         file_put_contents('../data/dm-log.txt', $data);
-        return "Data added";
+        return "Data added to DM log.";
+    }
+
+    public function addToPlayerLog($log)
+    {
+        $data = "$log\n";
+        $data .= file_get_contents('../data/player-log.txt');
+        file_put_contents('../data/player-log.txt', $data);
+        return "Data added to player log.";
     }
 
 }

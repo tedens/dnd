@@ -123,6 +123,7 @@ $prof = $lvlInfo['prof'];
                         echo "<ul>Max HP: $maxHp</ul>";
 
                         echo "<hr>";
+                        echo "<h4>Stats</h4>";
                         foreach ($user['stats'] as $key => $st){
                             echo "<ul>$key: $st -- Mod: ".$am->getAbilityModifer($st)."</ul>";
                         }
@@ -167,6 +168,7 @@ $prof = $lvlInfo['prof'];
                             ?>
                         </table>
                         <hr>
+                        <h4>Bag</h4>
                         <table cellpadding="10" style="width: 100%;">
                             <tr>
                                 <th>
@@ -195,12 +197,16 @@ $prof = $lvlInfo['prof'];
                                 }
                                 ?>
                         </table>
+                        <hr>
+
                     </div>
+
                 </div>
                 <div class="col-lg-3">
                     <div class="col-lg-12 fa-border">
                         <h4>TODO</h4>
-                        <?php if (5 - $user['statRolls'] !== 0){ echo '<button data-uname="'.$uname.'" id="reroll" class="btn btn-success button left">ReRoll ('.(5 - $user['statRolls']).' left)</button><br><br>';
+                        <?php
+                        if (5 - $user['statRolls'] !== 0){ echo '<button data-uname="'.$uname.'" id="reroll" class="btn btn-success button left">ReRoll ('.(5 - $user['statRolls']).' left)</button><br><br>';
     echo '<button type="button" id="satisfiedButton" class="btn btn-primary" data-uname="'.$uname.'">Satisfied with Stats?</button><br><br>';}
                         if($align == ''){ echo '<button type="button" id="setAlignButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setAlign" class="btn btn-primary">Set Alignment</button><br><br>';}
                          if($fullName == ' '){ echo '<button type="button" id="setNameButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setName" class="btn btn-primary">Set Name</button><br><br>';}
@@ -209,7 +215,19 @@ $prof = $lvlInfo['prof'];
                         if($class == ''){ echo '<button type="button" id="setClassButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setClass" class="btn btn-primary">Set Class</button><br><br>';}
                         if($gender == ''){ echo '<button type="button" id="setGenderButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setGender" class="btn btn-primary">Set Gender</button><br><br>';}
                         ?>
+                        <hr>
+                        <h4>Dice Rolls</h4>
+                        <?php
+                        echo '<button type="button" id="rollDiceButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#rollDice" class="btn btn-primary">Roll Dice</button><br><br>';
+
+                        ?>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h4>Player Log</h4>
+                    <textarea rows="20" readonly class="form-control player-log"></textarea>
                 </div>
             </div>
         </div>
