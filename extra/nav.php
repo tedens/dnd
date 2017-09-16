@@ -37,7 +37,7 @@ foreach ($users as $Player) {
             <ul class="nav" id="side-menu">
                 <li>
                   <a href="#" data-toggle="modal" data-target="#newUser"><i class="fa fa-plus-circle fa-fw"></i>New User</a>
-                    <a href="/dm.php">DM Page</a>
+                    <a href="/pages/dm.php">DM Page</a>
                     <?php
                     foreach ($users as $u) {
                         echo '<a href="index.php?'.substr($u, 0, -5).'"><i class="fa fa-user fa-fw"></i>'. substr($u, 0, -5) .'</a>';

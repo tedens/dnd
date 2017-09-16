@@ -141,34 +141,34 @@ switch ($_REQUEST['action']){
         $race = $_REQUEST['race'];
         $user['race'] = $race;
         if ($race == 'Dragonborn') {
-            $user['stat']['Strength'] = $user['stat']['Strength'] + 2;
-            $user['stat']['Charisma'] = $user['stat']['Charisma'] + 1;
+            $user['stats']['Strength'] = $user['stats']['Strength'] + 2;
+            $user['stats']['Charisma'] = $user['stats']['Charisma'] + 1;
         } elseif ($race == 'Dwarf') {
-            $user['stat']['Wisdom'] = $user['stat']['Wisdom'] + 1;
+            $user['stats']['Wisdom'] = $user['stats']['Wisdom'] + 1;
             $user['maxHp'] = $user['maxHp'] + 1;
         } elseif ($race == 'Elf') {
-            $user['stat']['Dexterity'] = $user['stat']['Dexterity'] + 2;
+            $user['stats']['Dexterity'] = $user['stats']['Dexterity'] + 2;
         } elseif ($race == 'Gnome') {
-            $user['stat']['Dexterity'] = $user['stat']['Dexterity'] + 1;
+            $user['stats']['Dexterity'] = $user['stats']['Dexterity'] + 1;
         } elseif ($race == 'Half-Elf') {
-            $user['stat']['Charisma'] = $user['stat']['Charisma'] + 2;
+            $user['stats']['Charisma'] = $user['stats']['Charisma'] + 2;
         } elseif ($race == 'Half-Orc') {
-            $user['stat']['Strength'] = $user['stat']['Strength'] + 2;
-            $user['stat']['Constitution'] = $user['stat']['Constitution'] + 1;
+            $user['stats']['Strength'] = $user['stats']['Strength'] + 2;
+            $user['stats']['Constitution'] = $user['stats']['Constitution'] + 1;
         } elseif ($race == 'Hafling') {
-            $user['stat']['Dexterity'] = $user['stat']['Dexterity'] + 2;
+            $user['stats']['Dexterity'] = $user['stats']['Dexterity'] + 2;
         } elseif ($race == 'Human') {
-            $user['stat']['Strength'] = $user['stat']['Strength'] + 1;
-            $user['stat']['Constitution'] = $user['stat']['Constitution'] + 1;
-            $user['stat']['Dexterity'] = $user['stat']['Dexterity'] + 1;
-            $user['stat']['Intelligence'] = $user['stat']['Intelligence'] + 1;
-            $user['stat']['Wisdom'] = $user['stat']['Wisdom'] + 1;
-            $user['stat']['Charisma'] = $user['stat']['Charisma'] + 1;
+            $user['stats']['Strength'] = $user['stats']['Strength'] + 1;
+            $user['stats']['Constitution'] = $user['stats']['Constitution'] + 1;
+            $user['stats']['Dexterity'] = $user['stats']['Dexterity'] + 1;
+            $user['stats']['Intelligence'] = $user['stats']['Intelligence'] + 1;
+            $user['stats']['Wisdom'] = $user['stats']['Wisdom'] + 1;
+            $user['stats']['Charisma'] = $user['stats']['Charisma'] + 1;
         } elseif ($race == 'Lizard-Folk') {
 
         } elseif ($race == 'Tiefling') {
-            $user['stat']['Intelligence'] = $user['stat']['Intelligence'] + 1;
-            $user['stat']['Charisma'] = $user['stat']['Charisma'] + 2;
+            $user['stats']['Intelligence'] = $user['stats']['Intelligence'] + 1;
+            $user['stats']['Charisma'] = $user['stats']['Charisma'] + 2;
         }
 
         break;

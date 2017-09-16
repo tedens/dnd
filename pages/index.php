@@ -130,7 +130,8 @@ $prof = $lvlInfo['prof'];
                         <hr>
                         <?php
                         echo "<ul>Exp: $exp</ul>";
-                        echo "<ul>Level & Proficiency: $lvl ($prof)</ul>";
+                        echo "<ul>Level: $lvl</ul>";
+                        echo "<ul>Proficiency: $prof</ul>";
                         echo "<ul>Gold: ".$gold."g</ul>";
                         ?>
                     </div>
