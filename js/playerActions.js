@@ -177,11 +177,16 @@ $(document).ready(function() {
             item = $(this).val(),
             amount = $(this).data('amount'),
             ajaxUrl = '/php/actions.php?action=quiverDel&user=' + uname + '&item=' + item;
+
+        if (amount == '-1'){
+          alert("Your quiver is empty");
+        } else {
         $.post(ajaxUrl, function () {
             var log = uname + " used an arrow. They have " + amount + " left.";
             addToLog(log);
             location.reload();
         });
+      }
 
     });
 

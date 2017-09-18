@@ -31,19 +31,13 @@ $restMode = $user['restMode'];
 //get ability modify info
 $am = new abilityModifer();
 
-if ($user['statRolls'] !== '5'){
+if ($user['statRolls'] < '5'){
     $allowRolls = true;
 } else {
     $allowRolls = false;
 }
 
-if (isset($_POST['action'])) {
-    switch ($_POST['action']) {
-        case 'reroll':
-            break;
-    }
-}
-
+var_dump($fullName);
 
 //get level based on exp amount.
 $lf = new levelFinder();
@@ -101,7 +95,8 @@ $prof = $lvlInfo['prof'];
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header"><?php echo $fullName; ?></h1>
+
+                    <h1 class="page-header"><?php if ($fullName == ' ') { echo "Please set your name"; }else { echo $fullName;} ?></h1>
 
 
                 </div>
@@ -197,7 +192,6 @@ $prof = $lvlInfo['prof'];
                                 }
                                 ?>
                         </table>
-                        <hr>
 
                     </div>
 
@@ -206,12 +200,12 @@ $prof = $lvlInfo['prof'];
                     <div class="col-lg-12 fa-border">
                         <h4>TODO</h4>
                         <?php
-                        if (5 - $user['statRolls'] !== 0){ echo '<button data-uname="'.$uname.'" id="reroll" class="btn btn-success button left">ReRoll ('.(5 - $user['statRolls']).' left)</button><br><br>';
-    echo '<button type="button" id="satisfiedButton" class="btn btn-primary" data-uname="'.$uname.'">Satisfied with Stats?</button><br><br>';}
+                        if ($allowRolls){ echo '<button data-uname="'.$uname.'" id="reroll" class="btn btn-success button left">ReRoll ('.(5 - $user['statRolls']).' left)</button><br><br>';
+                          echo '<button type="button" id="satisfiedButton" class="btn btn-primary" data-uname="'.$uname.'">Satisfied with Stats?</button><br><br>';}
                         if($align == ''){ echo '<button type="button" id="setAlignButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setAlign" class="btn btn-primary">Set Alignment</button><br><br>';}
-                         if($fullName == ' '){ echo '<button type="button" id="setNameButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setName" class="btn btn-primary">Set Name</button><br><br>';}
+                        if($fullName == ' '){ echo '<button type="button" id="setNameButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setName" class="btn btn-primary">Set Name</button><br><br>';}
                         if($age == ''){ echo '<button type="button" id="setAgeButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setAge" class="btn btn-primary">Set Age</button><br><br>';}
-                        if($race == '' && $user['statRolls'] == 5){ echo '<button type="button" id="setRaceButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setRace" class="btn btn-primary">Set Race</button><br><br>';}
+                        if($race == '' && !$allowRolls){ echo '<button type="button" id="setRaceButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setRace" class="btn btn-primary">Set Race</button><br><br>';}
                         if($class == ''){ echo '<button type="button" id="setClassButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setClass" class="btn btn-primary">Set Class</button><br><br>';}
                         if($gender == ''){ echo '<button type="button" id="setGenderButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setGender" class="btn btn-primary">Set Gender</button><br><br>';}
                         ?>
@@ -225,7 +219,7 @@ $prof = $lvlInfo['prof'];
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-8 fa-border">
                     <h4>Player Log</h4>
                     <textarea rows="20" readonly class="form-control player-log"></textarea>
                 </div>
@@ -249,7 +243,6 @@ $prof = $lvlInfo['prof'];
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
     <script src="../js/dataFormat.js"></script>
-
     <script src="../js/playerActions.js"></script>
     <?php include_once '../extra/playerModals.php'; ?>
 </body>

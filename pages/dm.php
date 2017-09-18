@@ -83,7 +83,7 @@ if ($dm->restMode == 1){
                         echo "<ul>".substr($u, 0, -5)." --- Character Name: ".$jsonUser->firstname." ".$jsonUser->lastname." -- Gold: ". $jsonUser->gold."g -- HP: ".$jsonUser->hp."</ul>";
                     }
                     ?>
-                    <button id="giveGoldButton" data-toggle="modal" data-target="#giveGold" class="btn btn-warning">Manage Gold</button>
+                    <button id="giveGoldButton" data-toggle="modal" data-target="#giveGold" class="btn btn-warning">Give Gold</button>
                     <button id="giveExpButton" data-toggle="modal" data-target="#giveExp" class="btn btn-basic">Give Exp</button>
                     <button id="giveItemButton" data-toggle="modal" data-target="#manageInv" class="btn btn-primary">Give Items</button>
                     <button id="giveStatButton" data-toggle="modal" data-target="#giveStat" class="btn btn-primary">Add stats</button>

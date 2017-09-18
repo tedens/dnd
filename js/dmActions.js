@@ -10,6 +10,8 @@ $(document).ready(function() {
                 addToLog(log);
                 dmLog();
                 $('#giveGold').modal('toggle');
+                $("#goldAmount").val("");
+                $("#goldList").val("");
 
             })
         });
@@ -26,6 +28,8 @@ $(document).ready(function() {
                 addToLog(log);
                 dmLog();
                 $('#giveExp').modal('toggle');
+                $("#exp").val('');
+                $("#players").val('');
             })
         });
 
@@ -41,6 +45,9 @@ $(document).ready(function() {
                 addToLog(log);
                 dmLog();
                 $('#giveStat').modal('toggle');
+                $("#stat").val('');
+                $("#addStat").val('');
+                $('#statPlayers').val('');
             })
         });
 
@@ -55,6 +62,9 @@ $(document).ready(function() {
                 addToLog(log);
                 dmLog();
                 $('#modHealth').modal('toggle');
+                $("#hp").val('');
+                var hp = $("#hp").val();
+                $('#playerHpList').val('');
             })
         });
 
@@ -75,6 +85,14 @@ $(document).ready(function() {
             addToLog(log);
             dmLog();
             $('#manageInv').modal('toggle');
+            $("#itemName").val('');
+            $("#itemType").val('');
+            $("#statMod").val('');
+            $("#cost").val('');
+            $("#desc").val('');
+            $("#statName").val('');
+            $("#playerList").val('');
+            $("#mod").val('');
         })
 
     });

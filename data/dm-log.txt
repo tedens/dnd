@@ -1,3 +1,210 @@
+9/18/17 5:43:42 - kiliso used an arrow. They have 0 left.
+9/18/17 5:42:34 - kiliso gained an arrow. They have 1 left.
+9/18/17 5:41:57 - kiliso gained an arrow. They have 0 left.
+9/18/17 5:41:55 - kiliso used an arrow. They have 0 left.
+9/18/17 5:41:52 - kiliso used an arrow. They have 0 left.
+9/18/17 5:41:50 - kiliso equiped Arrows
+9/18/17 5:41:26 - kiliso equiped Arrows
+9/18/17 5:33:16 - Added [object Object] gold to [object Object]'s balance.
+9/18/17 5:32:51 - Added [object Object] gold to Nightwing's balance.
+9/18/17 5:30:42 - Added 24 gold to testuser's balance.
+9/18/17 5:28:05 - Added 2 gold to Nightwing's balance.
+9/18/17 5:26:36 - Added 5 gold to Nightwing's balance.
+9/18/17 5:25:07 - Added 10 gold to IMightyJun's balance.
+9/18/17 5:24:28 - Added 10 gold to Nightwing's balance.
+9/18/17 5:24:28 - Added 10 gold to Nightwing's balance.
+9/18/17 0:37:08 - Added 25 gold to Nightwing's balance.
+9/18/17 0:16:30 - Added 100 gold to kiliso's balance.
+9/18/17 0:16:10 - Added 100 gold to Nightwing's balance.
+9/18/17 0:8:34 - kiliso has rerolled their stats.
+9/18/17 0:5:04 - kiliso has rerolled their stats.
+9/18/17 0:5:00 - kiliso has rerolled their stats.
+9/16/17 22:17:35 - kiliso rolled a body sided dice 1 times for tewsad. The result was: Right Arm
+9/16/17 22:17:13 - kiliso rolled a 20 sided dice 1 times for bhvf. The result was: 19
+9/16/17 15:10:15 - kiliso rolled a body sided dice 1 times for test. The result was: Full Body
+9/16/17 15:10:14 - kiliso rolled a body sided dice 1 times for test. The result was: Right Arm
+9/16/17 15:10:13 - kiliso rolled a body sided dice 1 times for test. The result was: Chest
+9/16/17 15:10:13 - kiliso rolled a body sided dice 1 times for test. The result was: Right Leg
+9/16/17 15:10:12 - kiliso rolled a body sided dice 1 times for test. The result was: Right Arm
+9/16/17 15:10:08 - kiliso rolled a body sided dice 1 times for test. The result was: Stomach
+9/16/17 15:10:07 - kiliso rolled a body sided dice 1 times for test. The result was: Right Arm
+9/16/17 15:10:07 - kiliso rolled a body sided dice 1 times for test. The result was: Right Foot
+9/16/17 15:10:05 - kiliso rolled a body sided dice 1 times for test. The result was: Left Foot
+9/16/17 7:27:07 - kiliso rolled a 20 sided dice 2 times for Init. The result was: 5
+9/16/17 7:21:38 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 13
+9/16/17 7:20:52 - kiliso rolled a 20 sided dice  times for  . The result was:
+9/16/17 7:20:51 - kiliso rolled a 20 sided dice  times for  . The result was:
+9/16/17 7:17:05 - kiliso rolled a 12 sided dice 10 times for  test. The result was: 97
+9/16/17 7:17:05 - kiliso rolled a 12 sided dice 10 times for  test. The result was: 77
+9/16/17 7:17:05 - kiliso rolled a 12 sided dice 10 times for  test. The result was: 23
+9/16/17 7:17:04 - kiliso rolled a 12 sided dice 10 times for  test. The result was: 118
+9/16/17 7:17:04 - kiliso rolled a 12 sided dice 10 times for  test. The result was: 22
+9/16/17 7:17:04 - kiliso rolled a 12 sided dice 10 times for  test. The result was: 74
+9/16/17 7:17:04 - kiliso rolled a 12 sided dice 10 times for  test. The result was: 67
+9/16/17 7:17:04 - kiliso rolled a 12 sided dice 10 times for  test. The result was: 55
+9/16/17 7:17:04 - kiliso rolled a 12 sided dice 10 times for  test. The result was: 53
+9/16/17 7:17:04 - kiliso rolled a 12 sided dice 10 times for  test. The result was: 24
+9/16/17 7:17:03 - kiliso rolled a 12 sided dice 10 times for  test. The result was: 71
+9/16/17 7:17:03 - kiliso rolled a 12 sided dice 10 times for  test. The result was: 46
+9/16/17 7:17:00 - kiliso rolled a 12 sided dice 1 times for  test. The result was: 12
+9/16/17 7:17:00 - kiliso rolled a 12 sided dice 1 times for  test. The result was: 6
+9/16/17 7:16:59 - kiliso rolled a 12 sided dice 1 times for  test. The result was: 2
+9/16/17 7:16:59 - kiliso rolled a 12 sided dice 1 times for  test. The result was: 12
+9/16/17 7:16:59 - kiliso rolled a 12 sided dice 1 times for  test. The result was: 1
+9/16/17 7:16:59 - kiliso rolled a 12 sided dice 1 times for  test. The result was: 11
+9/16/17 7:16:59 - kiliso rolled a 12 sided dice 1 times for  test. The result was: 5
+9/16/17 7:16:59 - kiliso rolled a 12 sided dice 1 times for  test. The result was: 9
+9/16/17 7:16:58 - kiliso rolled a 12 sided dice 1 times for  test. The result was: 7
+9/16/17 7:16:54 - kiliso rolled a 12 sided dice  times for  . The result was:
+9/16/17 7:16:53 - kiliso rolled a 12 sided dice  times for  . The result was:
+9/16/17 7:16:53 - kiliso rolled a 12 sided dice  times for  . The result was:
+9/16/17 7:16:35 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 6
+9/16/17 7:16:34 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 5
+9/16/17 7:16:34 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 2
+9/16/17 7:16:32 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 17
+9/16/17 7:15:30 - kiliso rolled a 20 sided dice 2 times for  test. The result was: 13
+9/16/17 7:13:02 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 4
+9/16/17 7:13:02 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 9
+9/16/17 7:13:01 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 13
+9/16/17 7:13:01 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 13
+9/16/17 7:13:01 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 15
+9/16/17 7:13:01 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 8
+9/16/17 7:13:01 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 9
+9/16/17 7:13:00 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 6
+9/16/17 7:13:00 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 3
+9/16/17 7:13:00 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 6
+9/16/17 7:13:00 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 10
+9/16/17 7:13:00 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 9
+9/16/17 7:12:59 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 10
+9/16/17 7:12:59 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 12
+9/16/17 7:12:58 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 15
+9/16/17 7:12:58 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 3
+9/16/17 7:12:58 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 17
+9/16/17 7:12:58 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 3
+9/16/17 7:12:58 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 16
+9/16/17 7:12:57 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 11
+9/16/17 7:12:57 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 15
+9/16/17 7:12:57 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 5
+9/16/17 7:12:57 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 18
+9/16/17 7:12:57 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 15
+9/16/17 7:12:57 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 6
+9/16/17 7:12:56 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 6
+9/16/17 7:12:56 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 4
+9/16/17 7:12:56 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 16
+9/16/17 7:12:56 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 9
+9/16/17 7:12:56 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 9
+9/16/17 7:12:55 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 9
+9/16/17 7:12:55 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 15
+9/16/17 7:12:55 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 12
+9/16/17 7:12:55 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 14
+9/16/17 7:12:54 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 9
+9/16/17 7:12:54 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 16
+9/16/17 7:12:54 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 5
+9/16/17 7:12:54 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 9
+9/16/17 7:12:54 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 8
+9/16/17 7:12:53 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 11
+9/16/17 7:12:53 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 15
+9/16/17 7:12:53 - kiliso rolled a 6 sided dice 3 times for  test. The result was: 10
+9/16/17 7:12:50 - kiliso rolled a 6 sided dice 1 times for  test. The result was: 6
+9/16/17 7:12:50 - kiliso rolled a 6 sided dice 1 times for  test. The result was: 1
+9/16/17 7:12:50 - kiliso rolled a 6 sided dice 1 times for  test. The result was: 5
+9/16/17 7:12:50 - kiliso rolled a 6 sided dice 1 times for  test. The result was: 5
+9/16/17 7:12:28 - kiliso rolled a 6 sided dice 1 times for  test. The result was: 2
+9/16/17 7:12:28 - kiliso rolled a 6 sided dice 1 times for  test. The result was: 4
+9/16/17 7:12:28 - kiliso rolled a 6 sided dice 1 times for  test. The result was: 3
+9/16/17 7:12:28 - kiliso rolled a 6 sided dice 1 times for  test. The result was: 6
+9/16/17 7:12:27 - kiliso rolled a 6 sided dice 1 times for  test. The result was: 2
+9/16/17 7:12:27 - kiliso rolled a 6 sided dice 1 times for  test. The result was: 4
+9/16/17 7:12:27 - kiliso rolled a 6 sided dice 1 times for  test. The result was: 5
+9/16/17 7:12:27 - kiliso rolled a 6 sided dice 1 times for  test. The result was: 2
+9/16/17 7:12:27 - kiliso rolled a 6 sided dice 1 times for  test. The result was: 3
+9/16/17 7:12:26 - kiliso rolled a 6 sided dice 1 times for  test. The result was: 5
+9/16/17 7:12:26 - kiliso rolled a 6 sided dice 1 times for  test. The result was: 5
+9/16/17 7:12:21 - kiliso rolled a 20 sided dice 30 times for  test. The result was: 213
+9/16/17 7:12:21 - kiliso rolled a 20 sided dice 30 times for  test. The result was: 426
+9/16/17 7:12:21 - kiliso rolled a 20 sided dice 30 times for  test. The result was: 567
+9/16/17 7:12:21 - kiliso rolled a 20 sided dice 30 times for  test. The result was: 224
+9/16/17 7:12:20 - kiliso rolled a 20 sided dice 30 times for  test. The result was: 447
+9/16/17 7:12:20 - kiliso rolled a 20 sided dice 30 times for  test. The result was: 332
+9/16/17 7:12:20 - kiliso rolled a 20 sided dice 30 times for  test. The result was: 92
+9/16/17 7:12:20 - kiliso rolled a 20 sided dice 30 times for  test. The result was: 411
+9/16/17 7:12:20 - kiliso rolled a 20 sided dice 30 times for  test. The result was: 27
+9/16/17 7:12:16 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 6
+9/16/17 7:12:16 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 7
+9/16/17 7:12:16 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 1
+9/16/17 7:12:15 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 9
+9/16/17 7:12:15 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 19
+9/16/17 7:12:15 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 4
+9/16/17 7:12:15 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 1
+9/16/17 7:12:14 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 20
+9/16/17 7:12:14 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 18
+9/16/17 7:12:14 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 1
+9/16/17 7:12:13 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 12
+9/16/17 7:12:13 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 3
+9/16/17 7:12:13 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 3
+9/16/17 7:12:13 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 8
+9/16/17 7:12:12 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 19
+9/16/17 7:12:12 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 16
+9/16/17 7:12:12 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 11
+9/16/17 7:12:11 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 20
+9/16/17 7:12:11 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 16
+9/16/17 7:12:11 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 19
+9/16/17 7:12:11 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 7
+9/16/17 7:12:11 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 10
+9/16/17 7:12:10 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 11
+9/16/17 7:12:10 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 20
+9/16/17 7:12:10 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 15
+9/16/17 7:12:10 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 7
+9/16/17 7:12:10 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 18
+9/16/17 7:12:10 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 20
+9/16/17 7:12:09 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 4
+9/16/17 7:12:09 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 1
+9/16/17 7:12:09 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 6
+9/16/17 7:12:09 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 2
+9/16/17 7:12:09 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 9
+9/16/17 7:12:08 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 17
+9/16/17 7:12:08 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 9
+9/16/17 7:12:08 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 8
+9/16/17 7:10:32 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 2
+9/16/17 7:10:31 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 22
+9/16/17 7:10:31 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 40
+9/16/17 7:10:31 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 8
+9/16/17 7:10:30 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 18
+9/16/17 7:10:30 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 20
+9/16/17 7:10:18 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 0
+9/16/17 7:10:17 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 0
+9/16/17 7:10:17 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 0
+9/16/17 7:10:04 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 11
+9/16/17 7:9:56 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 11
+9/16/17 7:9:56 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 11
+9/16/17 7:9:55 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 11
+9/16/17 7:9:55 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 11
+9/16/17 7:9:42 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 10
+9/16/17 7:9:41 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 10
+9/16/17 7:8:52 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 132
+9/16/17 7:8:51 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 136
+9/16/17 7:8:17 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 10
+9/16/17 7:8:16 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 36
+9/16/17 7:8:16 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 8
+9/16/17 7:8:16 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 28
+9/16/17 7:8:15 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 32
+9/16/17 7:6:51 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 20
+9/16/17 7:6:49 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 20
+9/16/17 7:6:40 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 2040
+9/16/17 7:6:21 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 30
+9/16/17 7:6:21 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 20
+9/16/17 7:6:21 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 40
+9/16/17 7:6:21 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 36
+9/16/17 7:6:21 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 26
+9/16/17 7:6:21 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 22
+9/16/17 7:6:20 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 10
+9/16/17 7:6:20 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 10
+9/16/17 7:6:20 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 14
+9/16/17 7:6:19 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 8
+9/16/17 7:6:19 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 32
+9/16/17 7:6:09 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 10
+9/16/17 7:6:08 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 30
+9/16/17 7:6:05 - kiliso rolled a 20 sided dice 1 times for  test. The result was: 4
 9/15/17 23:30:37 - kiliso unequiped Arrows
 9/15/17 3:14:19 - kiliso has rerolled their stats.
 9/15/17 3:12:13 - kiliso has rerolled their stats.
