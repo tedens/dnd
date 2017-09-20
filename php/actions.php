@@ -253,6 +253,10 @@ switch ($_REQUEST['action']){
         $user['stats'][$_REQUEST['stat']] = $user['stats'][$_REQUEST['stat']] + floor($_REQUEST['addStat']);
         break;
 
+    case "saveSkill":
+        $user['skills'][] = array($_REQUEST['skill'] => "");
+        break;
+
     case "setHp":
         if ($user['hp'] == ""){
           $user['maxHp'] = $_REQUEST['hp'];

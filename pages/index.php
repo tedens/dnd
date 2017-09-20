@@ -6,8 +6,6 @@ include_once '../extra/nav.php';
 
 //get current user to view
 $uname = $_SERVER['QUERY_STRING'];
-
-
 if (file_exists('../chars/'.$uname.'.json')) {
     $user = json_decode(file_get_contents("../chars/$uname.json"), true);
 } else {
@@ -16,6 +14,7 @@ if (file_exists('../chars/'.$uname.'.json')) {
         $user = json_decode(file_get_contents("../chars/$uname.json"), true);
     }
 }
+
 //some one off variables
 $exp = $user['exp'];
 $gold = $user['gold'];
@@ -28,6 +27,8 @@ $gender = $user['sex'];
 $hp = $user['hp'];
 $maxHp = $user['maxHp'];
 $restMode = $user['restMode'];
+$skillSet = json_decode(file_get_contents("../data/skills.json"), true);
+
 //get ability modify info
 $am = new abilityModifer();
 
@@ -37,7 +38,6 @@ if ($user['statRolls'] < '5'){
     $allowRolls = false;
 }
 
-var_dump($fullName);
 
 //get level based on exp amount.
 $lf = new levelFinder();
@@ -209,20 +209,33 @@ $prof = $lvlInfo['prof'];
                         if($class == ''){ echo '<button type="button" id="setClassButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setClass" class="btn btn-primary">Set Class</button><br><br>';}
                         if($gender == ''){ echo '<button type="button" id="setGenderButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setGender" class="btn btn-primary">Set Gender</button><br><br>';}
                         ?>
+                        <button type="button" id="addSkillButton" data-uname="<?php echo $uname; ?>" data-toggle="modal" data-target="#addSkill" class="btn btn-primary">Add Skill</button>
                         <hr>
                         <h4>Dice Rolls</h4>
                         <?php
                         echo '<button type="button" id="rollDiceButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#rollDice" class="btn btn-primary">Roll Dice</button><br><br>';
-
                         ?>
+                        <hr>
+                        <h4>Skills</h4>
+                        <?php
+                        foreach($user['skills'] as $skill) {
+                          foreach($skill as $sk => $value){
+                          echo "<ul>$sk</ul>";
+                        }
+                        }
+                        ?>
+
+
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-8 fa-border">
+                <div class="col-lg-8">
+                  <div class="col-lg-12 fa-border left">
                     <h4>Player Log</h4>
                     <textarea rows="20" readonly class="form-control player-log"></textarea>
                 </div>
+              </div>
             </div>
         </div>
         <!-- /#page-wrapper -->

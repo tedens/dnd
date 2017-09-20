@@ -6,3 +6,4 @@ bower_components
 /data/dm-log.txt
 .idea/*
 /data/player-log.txt
+chars/template.json

@@ -112,6 +112,44 @@
 </div>
 
 <!-- Modal -->
+<div id="addSkill" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add a skill</h4>
+            </div>
+            <div class="modal-body">
+                <p>You may add a skill to your character abilities.</p>
+            </div>
+            <form style="margin: 5px 20px;">
+                <label>
+                    Skill:
+                </label>
+                <select id="skill" required>
+                  <?php
+                    foreach ($skillSet['skills'] as $skill => $attr ){
+                      $disabled = in_array($skill, $user['skills']);
+                      if (!$disabled){
+                      echo "<option >$skill ($attr)</option>";
+                    }
+                    }
+                  ?>
+                </select>
+                <br>
+                <button id="saveSkill" type="button" class="btn btn-info" data-uname="<?php echo $uname; ?>">Save</button>
+            </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal -->
 <div id="setGender" class="modal fade" role="dialog">
     <div class="modal-dialog">
 

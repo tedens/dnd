@@ -102,6 +102,14 @@ $(document).ready(function() {
             location.reload();
         });
     });
+    $('#saveSkill').click(function(){
+        var uname = $(this).data('uname'),
+            skill = $('#skill').find(":selected").text(),
+            ajaxUrl = '/php/actions.php?action=saveSkill&user=' + uname + '&skill='+ $.trim(skill);
+        $.post(ajaxUrl, function () {
+            location.reload();
+        });
+    });
     $('#saveClass').click(function(){
         var uname = $(this).data('uname'),
             playerClass = $('#class').find(":selected").text(),
