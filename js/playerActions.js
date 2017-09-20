@@ -110,6 +110,29 @@ $(document).ready(function() {
             location.reload();
         });
     });
+    $('#saveSpell').click(function(){
+        var uname = $(this).data('uname'),
+            spellLvl = $('#spellLvl').find(":selected").text(),
+            spellName = $('#spellName').val(),
+            spellDesc = $('#spellDesc').val(),
+            ajaxUrl = '/php/actions.php?action=saveSpell&user=' + uname + '&spellLvl=' + $.trim(spellLvl) + '&spellName=' + $.trim(spellName) + '&spellDesc=' + $.trim(spellDesc);
+        $.post(ajaxUrl, function () {
+            location.reload();
+        });
+    });
+    $('.removeSpell').click(function(){
+        if (confirm("Are you sure?") == true) {
+            var user = $(this).data('uname'),
+                spell = $(this).val(),
+                ajaxUrl = '/php/actions.php?action=removeSpell&user=' + user + '&spell=' + spell;
+                $.post(ajaxUrl, function () {
+                    var log = user + " removed " + spell + " from their spell list.";
+                    addToLog(log);
+                    addToPlayerLog(log);
+                    location.reload();
+                });
+        }
+    });
     $('#saveClass').click(function(){
         var uname = $(this).data('uname'),
             playerClass = $('#class').find(":selected").text(),

@@ -209,7 +209,9 @@ $prof = $lvlInfo['prof'];
                         if($class == ''){ echo '<button type="button" id="setClassButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setClass" class="btn btn-primary">Set Class</button><br><br>';}
                         if($gender == ''){ echo '<button type="button" id="setGenderButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setGender" class="btn btn-primary">Set Gender</button><br><br>';}
                         ?>
-                        <button type="button" id="addSkillButton" data-uname="<?php echo $uname; ?>" data-toggle="modal" data-target="#addSkill" class="btn btn-primary">Add Skill</button>
+                        <button type="button" id="addSkillButton" data-uname="<?php echo $uname; ?>" data-toggle="modal" data-target="#addSkill" class="btn btn-primary">Add Skill</button><br><br>
+
+                        <button type="button" id="addSpellButton" data-uname="<?php echo $uname; ?>" data-toggle="modal" data-target="#addSpell" class="btn btn-primary">Add Spell</button>
                         <hr>
                         <h4>Dice Rolls</h4>
                         <?php
@@ -219,11 +221,33 @@ $prof = $lvlInfo['prof'];
                         <h4>Skills</h4>
                         <?php
                         foreach($user['skills'] as $skill) {
-                          foreach($skill as $sk => $value){
-                          echo "<ul>$sk</ul>";
-                        }
+                          foreach($skill as $sk => $value) {
+                            echo "<ul>$sk</ul>";
+                          }
                         }
                         ?>
+
+                        <hr>
+                        <h4>Spells</h4>
+                        <table cellpadding="10" style="width: 100%;">
+                            <tr>
+                                <th>
+                                    Lvl
+                                </th>
+                                <th>
+                                    Name
+                                </th>
+                            </tr>
+                                <?php
+                                foreach($user['spells'] as $spell) {
+                                    echo "<tr>";
+                                    echo "<td>".$spell['lvl']."</td>";
+                                    echo "<td title='".$spell['desc']."'>".$spell['name']."</td>";
+                                    if ($restMode == 1) {echo "<td><button class='btn btn-danger removeSpell' data-uname='".$uname."' value='".$spell['name']."'>Remove</button></td>";}
+                                    echo "</tr>";
+                                }
+                                ?>
+                        </table>
 
 
                     </div>

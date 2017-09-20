@@ -256,7 +256,18 @@ switch ($_REQUEST['action']){
     case "saveSkill":
         $user['skills'][] = array($_REQUEST['skill'] => "");
         break;
-
+    case "saveSpell":
+        $user['spells'][] = array("lvl" => $_REQUEST['spellLvl'],"name" => $_REQUEST['spellName'],"desc" => $_REQUEST['spellDesc']);
+        break;
+    case "removeSpell":
+        $spell = $_REQUEST['spell'];
+        foreach ($user['spells'] as $key => $value){
+            if($value['name'] == $spell){
+                $spellKey = $key;
+            }
+        }
+        unset($user['spells'][$spellKey]);
+        break;
     case "setHp":
         if ($user['hp'] == ""){
           $user['maxHp'] = $_REQUEST['hp'];

@@ -131,15 +131,62 @@
                 <select id="skill" required>
                   <?php
                     foreach ($skillSet['skills'] as $skill => $attr ){
-                      $disabled = in_array($skill, $user['skills']);
-                      if (!$disabled){
-                      echo "<option >$skill ($attr)</option>";
-                    }
+                      echo "<option>$skill ($attr)</option>";
                     }
                   ?>
                 </select>
                 <br>
                 <button id="saveSkill" type="button" class="btn btn-info" data-uname="<?php echo $uname; ?>">Save</button>
+            </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="addSpell" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add a spell</h4>
+            </div>
+            <div class="modal-body">
+                <p>You may add a spell to your characters spell list only during a rest mode.</p>
+            </div>
+            <form style="margin: 5px 20px;">
+                <label>
+                    Spell Level:
+                </label>
+                <select id="spellLvl" required>
+                  <option>0</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                </select>
+                <br>
+                <label>
+                  Spell Name:
+                </label>
+                <input id="spellName" name="spellName" required onkeypress="return event.keyCode!=13" />
+                <br>
+                <label>
+                  Spell Desc:
+                </label>
+                <input id="spellDesc" name="spellDesc" value="Copy from PDF please" required onkeypress="return event.keyCode!=13" />
+                <br>
+                <button id="saveSpell" type="button" class="btn btn-info" data-uname="<?php echo $uname; ?>">Save</button>
             </form>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

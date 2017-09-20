@@ -13,6 +13,11 @@ switch ($_SERVER['QUERY_STRING']){
   case "pr":
       $pdf = "Players Rules";
       break;
+
+  case "sc":
+      $pdf = "Spell Compendium";
+      break;
+
 }
 
 ?>

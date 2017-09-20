@@ -52,7 +52,9 @@ foreach ($users as $Player) {
                   <ul class="dropdown-menu">
                     <a href="pdf.php?ph"><i class="fa fa-file" aria-hidden="true"></i> Players Handbook</a><br/>
                     <a href="pdf.php?sl"><i class="fa fa-file" aria-hidden="true"></i> Spell List</a><br/>
+                    <a href="pdf.php?sc"><i class="fa fa-file" aria-hidden="true"></i> Spell Compendium</a><br/>
                     <a href="pdf.php?pg"><i class="fa fa-file" aria-hidden="true"></i> Players Guide</a><br/>
+
                   </ul>
                 </li>
 
