@@ -117,6 +117,9 @@ $(document).ready(function() {
             spellDesc = $('#spellDesc').val(),
             ajaxUrl = '/php/actions.php?action=saveSpell&user=' + uname + '&spellLvl=' + $.trim(spellLvl) + '&spellName=' + $.trim(spellName) + '&spellDesc=' + $.trim(spellDesc);
         $.post(ajaxUrl, function () {
+          var log = uname + " added a level " + spellLvl + " called " + spellName + " to their spell list.";
+          addToLog(log);
+          addToPlayerLog(log);
             location.reload();
         });
     });
@@ -259,7 +262,7 @@ $(document).ready(function() {
             date = now.format("m/dd/yy H:M:ss");
         var newData = data.replace (/^/, date + ' - ');
         var ajaxUrl = '/php/actions.php?action=playerLog&log=' + newData;
-        $.post(ajaxUrl, function(){
+        $.post(ajaxUrl, function(e){
             console.log("Action Logged -- " + newData);
         });
     }

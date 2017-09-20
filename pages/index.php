@@ -192,7 +192,9 @@ $prof = $lvlInfo['prof'];
                                 }
                                 ?>
                         </table>
-
+                        <hr>
+                        <h4>Player Log</h4>
+                        <textarea rows="20" readonly class="form-control player-log"></textarea>
                     </div>
 
                 </div>
@@ -256,8 +258,7 @@ $prof = $lvlInfo['prof'];
             <div class="row">
                 <div class="col-lg-8">
                   <div class="col-lg-12 fa-border left">
-                    <h4>Player Log</h4>
-                    <textarea rows="20" readonly class="form-control player-log"></textarea>
+
                 </div>
               </div>
             </div>
