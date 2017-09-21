@@ -137,6 +137,14 @@ switch ($_REQUEST['action']){
         $user['sex'] = $_REQUEST['gender'];
         break;
 
+    case "setNote":
+        $user['notes'][] = $_REQUEST['note'];
+        break;
+
+    case "deleteNote":
+        unset($user['notes'][$_REQUEST['key']]);
+        break;
+
     case "setRace":
         $race = $_REQUEST['race'];
         $user['race'] = $race;

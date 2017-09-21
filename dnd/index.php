@@ -131,11 +131,14 @@ $prof = $lvlInfo['prof'];
                         echo "<ul>Gold: ".$gold."g</ul>";
                         ?>
                         <hr>
-                        <h4>Notes</h4>
+                        <h4>
+                          Notes
+                          <button id="addNoteButton" data-toggle="modal" data-target="#addNote" class="btn btn-primary" data-uname="<?php echo $uname; ?>">Add Note</button>
+                        </h4>
                         <?php
                           foreach ($user['notes'] as $key => $note){
 
-                            echo "$note\n<button id='deleteNote' data-uname='$uname' data-key='$key' class='btn small-btn-danger'>Delete</button>";
+                            echo "$note\n<button data-uname='$uname' data-key='$key' class='btn small-btn-danger deleteNote'>Delete</button>";
                             echo "<hr>";
                           }
 
@@ -220,10 +223,8 @@ $prof = $lvlInfo['prof'];
                         if($race == '' && !$allowRolls){ echo '<button type="button" id="setRaceButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setRace" class="btn btn-primary">Set Race</button><br><br>';}
                         if($class == ''){ echo '<button type="button" id="setClassButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setClass" class="btn btn-primary">Set Class</button><br><br>';}
                         if($gender == ''){ echo '<button type="button" id="setGenderButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#setGender" class="btn btn-primary">Set Gender</button><br><br>';}
-                        ?>
-                        <button type="button" id="addSkillButton" data-uname="<?php echo $uname; ?>" data-toggle="modal" data-target="#addSkill" class="btn btn-primary">Add Skill</button><br><br>
-
-                        <button type="button" id="addSpellButton" data-uname="<?php echo $uname; ?>" data-toggle="modal" data-target="#addSpell" class="btn btn-primary">Add Spell</button>
+                        if ($restMode == 1) { echo '<button type="button" id="addSkillButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#addSkill" class="btn btn-primary">Add Skill</button><br><br>';
+                          echo '<button type="button" id="addSpellButton" data-uname="'.$uname.'" data-toggle="modal" data-target="#addSpell" class="btn btn-primary">Add Spell</button>'; }?>
                         <hr>
                         <h4>Dice Rolls</h4>
                         <?php

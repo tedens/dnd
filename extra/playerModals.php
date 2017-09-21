@@ -114,6 +114,34 @@
 </div>
 
 <!-- Modal -->
+<div id="addNote" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add a note</h4>
+            </div>
+            <div class="modal-body">
+                <p>Add a note to your character sheet.</p>
+            </div>
+            <form style="margin: 5px 20px;">
+                <label>
+                    Note:
+                </label>
+                <textarea cols="50" rows="10" id="note" name="note" onkeypress="return event.keyCode!=13" /></textarea>
+                <br>
+            </form>
+            <div class="modal-footer">
+              <button id="saveNote" type="button" class="btn btn-info save" data-uname="<?php echo $uname; ?>">Save</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
 <div id="addSkill" class="modal fade" role="dialog">
     <div class="modal-dialog">
 

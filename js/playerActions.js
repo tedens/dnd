@@ -94,6 +94,22 @@ $(document).ready(function() {
             location.reload();
         });
     });
+    $('#saveNote').click(function(){
+        var uname = $(this).data('uname'),
+            note = $('#note').val(),
+            ajaxUrl = '/php/actions.php?action=setNote&user=' + uname + '&note='+ $.trim(note);
+        $.post(ajaxUrl, function () {
+            location.reload();
+        });
+    });
+    $('.deleteNote').click(function(){
+        var uname = $(this).data('uname'),
+            key = $(this).data('key'),
+            ajaxUrl = '/php/actions.php?action=deleteNote&user=' + uname + '&key='+ $.trim(key);
+        $.post(ajaxUrl, function () {
+            location.reload();
+        });
+    });
     $('#saveRace').click(function(){
         var uname = $(this).data('uname'),
             race = $('#race').find(":selected").text(),
