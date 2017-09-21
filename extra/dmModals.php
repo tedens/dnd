@@ -25,9 +25,10 @@
                 </select>
                 <br>
                 <br>
-                <button id="saveGold" type="button" class="btn btn-info">Save</button>
             </form>
             <div class="modal-footer">
+              <button id="saveGold" type="button" class="btn btn-info save">Save</button>
+
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -73,9 +74,10 @@
                 </select>
                 <br>
                 <br>
-                <button id="saveStat" type="button" class="btn btn-info">Save</button>
             </form>
             <div class="modal-footer">
+              <button id="saveStat" type="button" class="btn btn-info save">Save</button>
+
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -110,9 +112,10 @@
                 </select>
                 <br>
                 <br>
-                <button id="saveExp" type="button" class="btn btn-info">Save</button>
             </form>
             <div class="modal-footer">
+              <button id="saveExp" type="button" class="btn btn-info save">Save</button>
+
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -186,9 +189,10 @@
                 </select>
                 <br>
                 <br>
-                <button id="saveItem" type="button" class="btn btn-info">Save</button>
             </form>
             <div class="modal-footer">
+              <button id="saveItem" type="button" class="btn btn-info save">Save</button>
+
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -223,9 +227,10 @@
                 </select>
                 <br>
                 <br>
-                <button id="saveHp" type="button" class="btn btn-info">Save</button>
             </form>
             <div class="modal-footer">
+              <button id="saveHp" type="button" class="btn btn-info save">Save</button>
+
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -253,9 +258,10 @@
                 <input type="radio" name="restMode" value="0" <?php if ($restMode === false){ echo "checked"; } ?>> Off<br>
                 <br>
                 <br>
-                <button id="saveRestMode" type="button" class="btn btn-info">Save</button>
             </form>
             <div class="modal-footer">
+              <button id="saveRestMode" type="button" class="btn btn-info save">Save</button>
+
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>

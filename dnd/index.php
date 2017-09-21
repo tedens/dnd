@@ -130,6 +130,16 @@ $prof = $lvlInfo['prof'];
                         echo "<ul>Proficiency: $prof</ul>";
                         echo "<ul>Gold: ".$gold."g</ul>";
                         ?>
+                        <hr>
+                        <h4>Notes</h4>
+                        <?php
+                          foreach ($user['notes'] as $key => $note){
+
+                            echo "$note\n<button id='deleteNote' data-uname='$uname' data-key='$key' class='btn small-btn-danger'>Delete</button>";
+                            echo "<hr>";
+                          }
+
+                         ?>
                     </div>
                 </div>
                 <div class="col-lg-6 right">

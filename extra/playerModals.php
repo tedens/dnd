@@ -22,9 +22,10 @@
                 </label>
                 <input id="lastName" name="lastName" required onkeypress="return event.keyCode!=13" />
                 <br>
-                <button id="saveName" type="button" class="btn btn-info" data-uname="<?php echo $uname; ?>">Save</button>
             </form>
             <div class="modal-footer">
+              <button id="saveName" type="button" class="btn btn-info save" data-uname="<?php echo $uname; ?>">Save</button>
+
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -72,9 +73,9 @@
                 </label>
                 <input id="rollMemo" name="rollMemo" required onkeypress="return event.keyCode!=13" />
                 <br>
-                <button id="saveRollDice" type="button" class="btn btn-info" data-uname="<?php echo $uname; ?>">Save</button>
             </form>
             <div class="modal-footer">
+              <button id="saveRollDice" type="button" class="btn btn-info save" data-uname="<?php echo $uname; ?>">Save</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -101,9 +102,10 @@
                 </label>
                 <input id="age" name="age" required onkeypress="return event.keyCode!=13" />
                 <br>
-                <button id="saveAge" type="button" class="btn btn-info" data-uname="<?php echo $uname; ?>">Save</button>
             </form>
             <div class="modal-footer">
+              <button id="saveAge" type="button" class="btn btn-info save" data-uname="<?php echo $uname; ?>">Save</button>
+
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -136,9 +138,10 @@
                   ?>
                 </select>
                 <br>
-                <button id="saveSkill" type="button" class="btn btn-info" data-uname="<?php echo $uname; ?>">Save</button>
             </form>
             <div class="modal-footer">
+              <button id="saveSkill" type="button" class="btn btn-info save" data-uname="<?php echo $uname; ?>">Save</button>
+
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -186,9 +189,9 @@
                 </label>
                 <input id="spellDesc" name="spellDesc" value="Copy from PDF please" required onkeypress="return event.keyCode!=13" />
                 <br>
-                <button id="saveSpell" type="button" class="btn btn-info" data-uname="<?php echo $uname; ?>">Save</button>
             </form>
             <div class="modal-footer">
+              <button id="saveSpell" type="button" class="btn btn-info save" data-uname="<?php echo $uname; ?>">Save</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -217,10 +220,12 @@
                     <option>Male</option>
                     <option>Female</option>
                     <option>Other</option>
-                </select>                <br>
-                <button id="saveGender" type="button" class="btn btn-info" data-uname="<?php echo $uname; ?>">Save</button>
+                </select>
+                <br>
             </form>
             <div class="modal-footer">
+              <button id="saveGender" type="button" class="btn btn-info save" data-uname="<?php echo $uname; ?>">Save</button>
+
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -279,9 +284,10 @@
                 </select>
 
                 <br>
-                <button id="saveAlign" type="button" class="btn btn-info" data-uname="<?php echo $uname; ?>">Save</button>
             </form>
             <div class="modal-footer">
+              <button id="saveAlign" type="button" class="btn btn-info save" data-uname="<?php echo $uname; ?>">Save</button>
+
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -320,9 +326,10 @@
                 </select>
 
                 <br>
-                <button id="saveRace" type="button" class="btn btn-info" data-uname="<?php echo $uname; ?>">Save</button>
             </form>
             <div class="modal-footer">
+              <button id="saveRace" type="button" class="btn btn-info save" data-uname="<?php echo $uname; ?>">Save</button>
+
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -364,9 +371,10 @@
                 </select>
 
                 <br>
-                <button id="saveClass" type="button" class="btn btn-info" data-uname="<?php echo $uname; ?>">Save</button>
             </form>
             <div class="modal-footer">
+              <button id="saveClass" type="button" class="btn btn-info save" data-uname="<?php echo $uname; ?>">Save</button>
+
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -393,9 +401,10 @@
                 </label>
                 <input id="username" name="username" required onkeypress="return event.keyCode!=13" />
                 <br>
-                <button id="saveUser" type="button" class="btn btn-info">Save</button>
             </form>
             <div class="modal-footer">
+              <button id="saveUser" type="button" class="btn btn-info save">Save</button>
+
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -441,9 +450,10 @@
                    ?>
                 </select>
                 <br>
-                <button id="tradeItemButton" type="button" class="btn btn-info" data-uname="<?php echo $uname; ?>">Trade</button>
             </form>
             <div class="modal-footer">
+              <button id="tradeItemButton" type="button" class="btn btn-info save" data-uname="<?php echo $uname; ?>">Trade</button>
+
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -482,9 +492,10 @@
                 </label>
                 <input id="tradeGoldAmount">
                 <br>
-                <button id="tradeGoldButton" type="button" class="btn btn-info" data-origGold="<?php echo $gold; ?>" data-uname="<?php echo $uname; ?>">Trade</button>
             </form>
             <div class="modal-footer">
+              <button id="tradeGoldButton" type="button" class="btn btn-info save" data-origGold="<?php echo $gold; ?>" data-uname="<?php echo $uname; ?>">Trade</button>
+
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>

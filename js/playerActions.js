@@ -27,7 +27,7 @@ $(document).ready(function() {
             var uname = $(this).data('uname'),
                 ajaxUrl = '/php/actions.php?action=satisfy&user=' + uname;
             $.post(ajaxUrl, function () {
-                var log = uname + " has rerolled their stats.";
+                var log = uname + " has settled with their stats.";
                 addToLog(log);
                 location.reload();
             });
