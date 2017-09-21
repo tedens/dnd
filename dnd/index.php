@@ -255,13 +255,6 @@ $prof = $lvlInfo['prof'];
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-8">
-                  <div class="col-lg-12 fa-border left">
-
-                </div>
-              </div>
-            </div>
         </div>
         <!-- /#page-wrapper -->
 
